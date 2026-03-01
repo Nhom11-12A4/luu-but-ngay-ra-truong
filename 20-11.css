@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Fz Cat Comic';
-    src: url('fonts/FzCatComic.ttf') format('truetype');
+    src: url('./FzCatComic.ttf') format('truetype');
 }
 
 body {
