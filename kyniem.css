@@ -1,0 +1,337 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Be Vietnam Pro', sans-serif;
+  background:#fdf6f0;
+  color:#444;
+}
+
+/* ===== Banner ===== */
+
+.banner{
+  position:relative;
+  height:80vh;
+  background:url("aodoan.jpg") center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(255, 240, 240, 0.55);
+}
+
+.banner-text{
+  position:relative;
+  z-index:2;
+}
+
+.banner h1{
+  font-family:'Playfair Display', serif;
+  font-size:60px;
+  color:#7b5e57;
+}
+
+.banner p{
+  font-size:20px;
+  margin-top:15px;
+  color:#9c7b74;
+}
+
+/* ===== Slogan ===== */
+
+.slogan{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:80px 20px;
+  background:#fff;
+  text-align:center;
+}
+
+.slogan-item h2{
+  font-family:'Playfair Display', serif;
+  color:#c38eb4;
+  margin-bottom:10px;
+}
+
+.slogan-item p{
+  color:#777;
+  font-style:italic;
+}
+
+/* ===== Memories ===== */
+
+.memories{
+  width:85%;
+  margin:auto;
+  padding:60px 0;
+}
+
+.memory{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  margin-bottom:80px;
+}
+
+.memory.reverse{
+  flex-direction:row-reverse;
+}
+
+.memory img{
+  width:45%;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.memory img:hover{
+  transform:scale(1.03);
+}
+
+.memory .text{
+  width:50%;
+}
+
+.memory h3{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  color:#b47c9b;
+  margin-bottom:15px;
+}
+
+.memory p{
+  line-height:1.8;
+  color:#666;
+}
+
+/* ===== Footer ===== */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#f8e8e8;
+  color:#8a6f6f;
+}
+
+/* ===== Back Home ===== */
+
+.back-home{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+}
+
+.back-home a{
+  background:#f4c2c2;
+  padding:10px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.back-home a:hover{
+  background:#e6a8a8;
+}
+/* Scroll animation */
+.memory{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+.memory.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.gallery{
+  text-align:center;
+  padding:80px 0;
+  background:#fffaf8;
+}
+
+.gallery h2{
+  font-family:'Playfair Display', serif;
+  margin-bottom:40px;
+  color:#b47c9b;
+}
+
+.polaroid-wrap{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.polaroid{
+  background:white;
+  padding:15px 15px 40px 15px;
+  width:220px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  transform:rotate(-3deg);
+  transition:0.4s;
+}
+
+.polaroid:nth-child(2){
+  transform:rotate(3deg);
+}
+
+.polaroid img{
+  width:100%;
+}
+
+.polaroid p{
+  margin-top:10px;
+  font-style:italic;
+  color:#777;
+}
+
+.polaroid:hover{
+  transform:scale(1.05) rotate(0deg);
+}
+.ending::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:white;
+  opacity:0;
+  pointer-events:none;
+  transition:10s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ending.active::after{
+  opacity:1;
+}
+.ending{
+  position:relative;
+  text-align:center;
+  padding:150px 20px;
+  background:white;
+  overflow:hidden;
+  transition:5s ease;
+}
+
+.ending.active{
+  opacity:0;
+}
+@media (max-width: 768px){
+
+  .banner{
+    height: 60vh;
+  }
+
+  .banner h1{
+    font-size: 34px;
+    padding: 0 15px;
+  }
+
+  .banner p{
+    font-size: 16px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .slogan{
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .memory{
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .memory.reverse{
+    flex-direction: column;
+  }
+
+  .memory img{
+    width: 100%;
+  }
+
+  .memory .text{
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px){
+
+  .polaroid{
+    width: 80%;
+  }
+
+}
+.footer{
+  background:#f8e8e8;
+  padding:40px 20px;
+  color:#8a6f6f;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  max-width:1100px;
+  margin:auto;
+  gap:40px;
+}
+
+.footer-left,
+.footer-right{
+  width:50%;
+}
+
+.footer ul{
+  margin-top:10px;
+  padding-left:18px;
+}
+
+.link{
+  text-decoration:none;
+  color:#b47c9b;
+}
+
+.link:hover{
+  text-decoration:underline;
+}
+
+.copyright{
+  margin-top:30px;
+  text-align:center;
+  font-style:italic;
+}
+@media (max-width: 768px){
+
+  .footer-row{
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-right{
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px){
+
+  .back-home a{
+    padding:8px 14px;
+    font-size:14px;
+  }
+
+}

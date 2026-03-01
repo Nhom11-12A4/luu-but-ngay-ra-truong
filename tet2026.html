@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<style>
+  /* ================= HOA RƠI ================= */
+
+.hoa-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hoa{
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: roi linear infinite;
+}
+
+@keyframes roi{
+  0%{
+    transform: translateY(0) rotate(0deg);
+    opacity:1;
+  }
+  100%{
+    transform: translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+
+/* ================= ÁNH SÁNG ================= */
+
+.light-overlay{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.2), transparent 40%);
+  pointer-events:none;
+  animation: lightMove 6s infinite alternate;
+  z-index: 1;
+}
+
+@keyframes lightMove{
+  from{ opacity:0.4; }
+  to{ opacity:0.8; }
+}
+@font-face {
+  font-family: "Fz Cat Comic";
+  src: url("FzCatComic.ttf") format("truetype");
+}
+body{
+   font-family: "Fz Cat Comic", sans-serif;
+}
+.box {
+  width: 500px;
+  background: linear-gradient(to right, #FF7733, #FFC516);
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 20px 0px 5px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  font-family: "Fz Cat Comic";
+  src: url("FzCatComic.ttf");
+  font-size: 20px;
+}
+.banner {
+  position: relative;
+  background: url("backgroudtet2026.jpg") center 10% no-repeat;
+  background-size: cover;    
+  height: 600px;              
+  text-align: center;
+  font-family: "Fz Cat Comic";
+  src: url("FzCatComic.ttf");
+}
+
+.text-tilte { 
+  font-size: 75px;
+   font-weight: bold;
+    color: rgba(248, 0, 75, 1);  }
+.text-shadow {
+  text-shadow: 0 2px 10px rgba(255, 253, 110, 1)
+}
+.slogan{
+  background-color: rgba(253, 58, 58, 1);
+  text-align: center;
+  width: 100%;
+  padding: 7rem 3rem;
+  box-sizing: border-box;}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1px;
+  max-width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+.block_3{
+  flex: 1 1 33.333%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.gradient-text-chu{
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #ff7733; 
+  background: linear-gradient(to right, #ff7733, #ffc516);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer{
+  background: gainsboro;
+  padding: 15px 0;
+  border-top: 1px solid #ccc;
+}
+
+.footer-row{
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  width: 90%;
+  margin: auto;
+}
+.footer-left{
+  width: 60%;
+}
+.footer-right{
+  width: 30%;
+}
+.footer ul{
+  margin: 5px 0;
+  padding-left: 18px;
+}
+
+.link{
+  color: blue;
+  text-decoration: none;
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+.canhchu{
+  position: absolute;
+  top: 8%;    
+  left: 50%;
+  transform: translateX(-50%);
+ text-align: center;
+ width: 90%;
+}
+.mauchu{
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(39, 245, 238, 1);
+}
+.cell_img {
+    width: 50%;}
+.que-container{
+  text-align:center;
+  margin:60px auto;
+  padding:40px;
+  color: gold;
+}
+
+.baolixi{
+  font-size:100px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.baolixi:hover{
+  transform: scale(1.1);
+}
+
+.lac{
+  animation: lac 0.5s infinite;
+}
+
+@keyframes lac{
+  0%{transform: scale(1) rotate(-12deg);}
+  50%{transform: scale(1) rotate(12deg);}
+  100%{transform: scale(1) rotate(-12deg);}
+}
+
+.mo{
+  animation: mo 0.6s forwards;
+}
+
+@keyframes mo{
+  0%{transform: scale(1);}
+  100%{transform: scale(1.3); opacity:0;}
+}
+
+.ketqua{
+  margin-top:25px;
+  font-size:22px;
+  min-height:40px;
+  opacity:0;
+  transition:0.5s;
+}
+
+.hien{
+  opacity:1;
+}
+.que-title{
+   color: darkred;
+}
+.flash {
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0.8;
+  animation: flashEffect 0.4s ease-out forwards;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@keyframes flashEffect {
+  0% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+.big-bang {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  font-size: 140px;
+  animation: bigExplode 0.8s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes bigExplode {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+.rain {
+  position: fixed;
+  top: -80px;
+  font-size: 40px; /* TO HƠN */
+  animation: rainFall 2.5s linear forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes rainFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg); /* rơi xa hơn */
+    opacity: 0;
+  }
+}
+/* ===== HOVER ẢNH ===== */
+
+.section img,
+.info-table img {
+  transition: all 0.4s ease;
+  border-radius: 15px;
+}
+
+.section img:hover,
+.info-table img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  /* Banner nhỏ lại */
+  .banner {
+    height: 350px;
+  }
+
+  .text-tilte {
+    font-size: 40px;
+  }
+
+  /* 3 khối slogan xếp dọc */
+  .row {
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .block_3 {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Table chuyển dọc */
+  .info-table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-table td {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .info-table img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Footer xếp dọc */
+  .footer-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+
+  /* Quẻ nhỏ lại cho mobile */
+  .baolixi {
+    font-size: 70px;
+  }
+
+  .ketqua {
+    font-size: 18px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .banner{
+    height: 300px;
+  }
+
+  .text-tilte{
+    font-size: 32px;
+  }
+
+  .slogan{
+    padding: 3rem 1rem;
+  }
+
+  .baolixi{
+    font-size: 70px;
+  }
+
+}
+</style>
+</head>
+<body>
+<!-- Hoa rơi -->
+<div class="hoa-container"></div>
+
+<!-- Ánh sáng -->
+<div class="light-overlay"></div>
+<div class="que-container que-title">
+  <h2>🧧 QUẺ ĐẦU NĂM 2026 🧧</h2>
+
+  <div class="baolixi" onclick="rutQue()" id="baolixi">
+    🧧
+  </div>
+
+  <div id="ketqua" class="ketqua"></div>
+
+  <!-- Âm thanh -->
+  <audio id="ting" src="ting.mp3"></audio>
+</div>
+  <div class="banner">
+    <div class="text-tilte text-shadow canhchu">PHONG TỤC<br>
+NGÀY TẾT
+</div>
+  </div>
+<div class="slogan">
+  <div class="row" style="background-color: #8B0000">
+    <div class="block_3 gradient-text-chu"><h2> KHAI XUÂN</h2><p><h3><em>Mở đầu năm mới, mở lòng đón điều may.</em></h3></p></div>
+    <div class="block_3 gradient-text-chu"><h2> LÌ XÌ MAY MẮN</h2><p><h3><em>Rút một quẻ đầu năm, nhận một chút lộc xuân.</em></h3></p></div>
+    <div class="block_3 gradient-text-chu"><h2> TÀI LỘC 2026</h2><p><h3><em>Một năm an khang<br>vạn sự như ý.</em></h3></p></div>
+</div>
+<table border="1" width="100%" class="info-table" style="border-color: rgba(253, 255, 61, 0.77); border-style: solid;">
+  <tr>
+    <td rowspan="1" width="35%" align="center"><img src="dichua.png" style="width: 80%; max-width: 900px;"></td>
+    <td><h2 style="color: rgba(253, 255, 100, 1);">Phong tục đi chùa</h2><h2> <br>"Tiếng chuông chùa vang vọng giữa sắc mai vàng, đưa ta về với những phút giây tĩnh tại. Đi lễ chùa đầu xuân không chỉ để cầu mong tài lộc, mà là để gửi gắm lòng thành kính, cầu chúc cho cha mẹ, thầy cô và người thân một năm Bính Ngọ bình an, vạn sự hanh thông."</h2></td>
+  </tr>
+<br>
+<br>
+<tr>
+        <td>
+            <h2 style="color: rgba(253, 255, 100, 1)">Gói bánh chưng</h2><h2><br>"Gói trọn hương vị đất trời trong lớp lá dong xanh, chiếc bánh chưng vuông vức là biểu tượng của sự đoàn viên và lòng hiếu thảo. Bên mâm cơm ngày Tết có miếng bánh dẻo thơm, nhành hành muối cay nồng, câu chuyện đầu năm cứ thế mà trở nên ấm áp, đậm đà tình thân."</h3>
+        </td>
+        <td width="35%" align="center">
+            <img src="banhchung.png" style="width: 90%; max-width: 500px;">
+        </td>
+    </tr>
+  <br>
+  <br>
+  <tr>
+  <td width="15%" align="center"><img src="lixitet.jpg" style="width: 90%; max-width: 300px"></td>
+  <td><h2 style="color: rgba(253, 255, 100, 1);">Lì xì</h2><h2><br>"Những phong bao lì xì đỏ thắm mang theo lời chúc "hay ăn chóng lớn" cho trẻ nhỏ và lời chúc "thọ tựa Nam Sơn" cho người già. Không quan trọng mệnh giá bên trong, miếng lộc đầu năm là biểu tượng của sự sẻ chia, lòng nhân ái và hy vọng về một năm mới rực rỡ, tốt lành."</h2></td>
+</tr>
+    
+  </td>
+</table>
+<br>
+<br>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-left">
+      <p><b>Liên hệ:</b></p>
+      <ul>
+        <li>Điện thoại: 0123456789</li>
+        <li>Website: <a href="https://c3krongbong.daklak.edu.vn/" class="link">Trường THPT Krông Bông</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <p><b>Xem thêm:</b></p>
+      <ul>
+        <li><a href="mo20-11.html" class="link">20/11 Ngày nhà giáo Việt Nam</a></li>
+        <li><a href="moluubut.html" class="link">Lưu bút ngày ra trường</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script>
+const container = document.querySelector(".hoa-container");
+
+function taoHoa(){
+  const hoa = document.createElement("div");
+  hoa.classList.add("hoa");
+
+  const loaiHoa = ["🌸","🏵️","🍀","💵"];
+  hoa.innerHTML = loaiHoa[Math.floor(Math.random()*loaiHoa.length)];
+
+  hoa.style.left = Math.random()*100 + "vw";
+  hoa.style.animationDuration = (5 + Math.random()*5) + "s";
+  hoa.style.fontSize = (15 + Math.random()*20) + "px";
+
+  container.appendChild(hoa);
+
+  setTimeout(()=>{
+    hoa.remove();
+  },10000);
+}
+
+setInterval(taoHoa, 300);
+</script>
+<script>
+function rutQue(){
+
+  const bao = document.getElementById("baolixi");
+  const ketqua = document.getElementById("ketqua");
+  const sound = document.getElementById("ting");
+
+  bao.classList.add("lac");
+
+  setTimeout(() => {
+
+  bao.classList.remove("lac");
+  bao.classList.add("mo");
+
+  sound.play();
+
+  let queTot = [
+    "🌸 BÌNH AN: Một năm yên ổn, gia đình hạnh phúc.",
+    "💰 PHÁT LỘC: Tiền bạc dồi dào, công việc thuận lợi.",
+    "❤️ NHÂN DUYÊN: Tình cảm khởi sắc, gặp được người tốt.",
+    "🏆 THÀNH CÔNG: Công việc có bước tiến lớn.",
+    "🌟 QUÝ NHÂN: Có người giúp đỡ đúng lúc."
+  ];
+
+  let queThuThach = [
+    "🌧 TIỂU HẠN: Đầu năm hơi trắc trở, kiên nhẫn sẽ vượt qua.",
+    "⚠ THỬ THÁCH: Có người ganh ghét, nên cẩn trọng.",
+    "💸 HAO TÀI: Chi tiêu nhiều hơn dự tính.",
+    "🌫 NHẠT NHÒA: Mọi việc chưa rõ ràng, chờ thời cơ.",
+    "🌒 VẬN TRÌ: Vận khí hơi chậm, nhưng cuối năm sẽ sáng.",
+    "🔥 RÈN LUYỆN: Áp lực nhiều, nhưng đây là năm trưởng thành.",
+    "🌪 BIẾN ĐỘNG: Công việc thay đổi bất ngờ, bình tĩnh xử lý.",
+    "🔮 NHẮC NHỞ: Đừng tin người quá dễ, suy nghĩ kỹ trước khi quyết định."
+  ];
+let queTrungBinh = [
+  "🌤 BÌNH HÒA: Mọi việc diễn ra ổn định, không quá nổi bật.",
+  "🌾 TÍCH LŨY: Năm nay nên vun đắp hơn là bứt phá.",
+  "📘 HỌC HỎI: Có thêm kinh nghiệm quý giá.",
+  "🕰 CHỜ THỜI: Chưa phải lúc bùng nổ, nhưng nền tảng đang vững.",
+  "🌱 NẢY MẦM: Điều tốt đang âm thầm hình thành."
+]
+  let random = Math.random();
+  let ketQuaText;
+
+if (random < 0.25) {
+
+  // 🌟 QUẺ TỐT
+  ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
+  ketqua.style.color = "#FFD700";
+
+  noLon();   // 💥 GỌI SIÊU CẤP HIỆU ỨNG
+
+
+} else if (random < 0.75) {
+
+  // 50% TRUNG BÌNH
+  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
+  ketqua.style.color = "#00CED1";
+
+} else {
+
+  // 25% THỬ THÁCH
+  ketQuaText = queThuThach[Math.floor(Math.random() * queThuThach.length)];
+  ketqua.style.color = "#FF4500";
+}
+
+  ketqua.innerHTML = ketQuaText;
+  ketqua.classList.add("hien");
+
+}, 1500);
+}
+function muaPhao() {
+  const phao = document.createElement("div");
+
+  const icons = ["✨","💥"];
+  phao.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+
+  phao.classList.add("rain");
+
+  phao.style.left = Math.random() * window.innerWidth + "px";
+
+  document.body.appendChild(phao);
+
+  setTimeout(() => {
+    phao.remove();
+  }, 2500);
+}
+function noLon() {
+
+  // ⚡ Flash
+  const flash = document.createElement("div");
+  flash.classList.add("flash");
+  document.body.appendChild(flash);
+  setTimeout(() => flash.remove(), 400);
+
+  // 💥 Nổ lớn
+  const boom = document.createElement("div");
+  boom.innerHTML = "💥";
+  boom.classList.add("big-bang");
+  document.body.appendChild(boom);
+  setTimeout(() => boom.remove(), 800);
+
+  // 🎆 Pháo tỏa
+  for(let i = 0; i < 15; i++){
+    setTimeout(taoPhaoXungQuanh, i * 50);
+  }
+
+  // 🌟 Mưa pháo
+  for(let i = 0; i < 40; i++){
+    setTimeout(muaPhao, i * 80);
+  }
+}
+function taoPhaoXungQuanh() {
+  const phao = document.createElement("div");
+  phao.innerHTML = "🌟";
+  phao.style.position = "fixed";
+  phao.style.left = "50%";
+  phao.style.top = "50%";
+  phao.style.fontSize = "30px";
+  phao.style.pointerEvents = "none";
+  phao.style.zIndex = "9999";
+
+  const angle = Math.random() * 2 * Math.PI;
+  const distance = 150 + Math.random() * 100;
+
+  const x = Math.cos(angle) * distance;
+  const y = Math.sin(angle) * distance;
+
+  phao.style.transition = "all 1s ease-out";
+  phao.style.transform = "translate(-50%, -50%)";
+
+  document.body.appendChild(phao);
+
+  setTimeout(() => {
+    phao.style.transform =
+      `translate(${x}px, ${y}px) scale(1.5)`;
+    phao.style.opacity = "0";
+  }, 10);
+
+  setTimeout(() => {
+    phao.remove();
+  }, 1000);
+}
+</script>
+</div>
+</body>
+</html>

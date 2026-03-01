@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="20-11.css">
+	<title></title>
+</head>
+<body>
+	<div class="banner">
+		<div class="gradient-text text-shadow canhchu">CHÀO MỪNG NGÀY<br>
+NHÀ GIÁO VIỆT&nbsp;NAM
+</div>
+	</div>
+<div class="slogan">
+	<div class="row" style="background-color: #2c3e50;">
+		<div class="block_3 gradient-text-chu"><h2>Tôn sư trọng đạo</h2><p><h3><em>Uống nước nhớ nguồn</em></h3></p></div>
+		<div class="block_3 gradient-text-chu"><h2>Tri ân thầy cô</h2><p><h3><em> Người lái đò thầm lặng </em></h3></p></div>
+		<div class="block_3 gradient-text-chu"><h2>Ươm mầm tương lai</h2><p><h3><em>Chắp cánh ước mơ</em></h3></p></div>
+	</div>
+<table border="1" width="100%" class="info-table mauchu" style="; border-style: solid;">
+	<tr>
+		<td rowspan="1" width="35%" align="center"><img src="trian.jpg" style="width: 80%; max-width: 300px;"><img src="trian(1).jpg" style="width: 80%; max-width: 300px;"></td>
+		<td><h3>"Con thuyền tre mộc mạc chở đầy sắc sen hồng chính là hình ảnh đẹp nhất về người thầy – người lái đò thầm lặng đưa bao thế hệ học trò qua sông. Từng thanh tre gắn kết vững chãi làm mạn thuyền, nâng đỡ những cánh hoa thanh cao vươn mình ra biển lớn tri thức. Một biểu tượng của lòng biết ơn, giản dị mà chứa chan tình nghĩa."</h3></td>
+	</tr>
+<br>
+<br>
+<tr>
+        <td>
+            <h3>"Chuyến thăm thầy cô không chỉ là cuộc gặp gỡ, mà là hành trình tìm về những kỷ niệm vô giá. Dưới mái hiên quen thuộc, những nụ cười hiền hậu và lời hỏi thăm ấm áp khiến chúng em hiểu rằng: Dù khôn lớn bay xa, tình thầy trò vẫn luôn là bến đỗ bình yên nhất trong trái tim mỗi người."</h3>
+        </td>
+        <td width="35%" align="center">
+            <img src="thamco.jpg" style="width: 90%; max-width: 600px;">
+        </td>
+    </tr>
+  <br>
+  <br>
+  <tr>
+  <td width="15%" align="center"><img src="bongchuyen.jpg" style="width: 90%; max-width: 500px"></td>
+  <td><h3>"Sức trẻ và tinh thần thể thao chính là món quà rực rỡ nhất gửi tặng thầy cô. Những trận bóng chuyền kịch tính không chỉ là cuộc đua về tỉ số, mà còn là nơi chúng em rèn luyện bản lĩnh và sự đoàn kết."</h3></td>
+</tr>
+  	
+  </td>
+</table>
+<br>
+<br>
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-left">
+      <p><b>Liên hệ:</b></p>
+      <ul>
+        <li>Điện thoại: 0123456789</li>
+        <li>Website: <a href="https://c3krongbong.daklak.edu.vn/" class="link">Trường THPT Krông Bông</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <p><b>Xem thêm:</b></p>
+      <ul>
+        <li><a href="moluubut.html" class="link">Lưu bút ngày ra trường</a></li>
+        <li><a href="tet2026.html" class="link">Phong tục ngày tết</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</div>
+<section class="thu-section"> <div class="phong-bi" onclick="moThu()"> <div class="nap"></div> <div class="than"></div> <p class="chu-mo">Nhấn để mở thư 💌</p> </div> <div class="la-thu" id="laThu">
+  <div class="noi-dung-thu" id="noiDung"></div>
+</div> </section>
+<script>
+// ===== Scroll hiện section =====
+const thu = document.querySelector(".thu-section");
+
+window.addEventListener("scroll", function(){
+  const viTri = thu.getBoundingClientRect().top;
+  const manHinh = window.innerHeight;
+
+  if(viTri < manHinh - 100){
+    thu.classList.add("hien");
+  }
+});
+
+
+// ===== Tim bay =====
+function taoTim(){
+  const tim = document.createElement("div");
+  tim.classList.add("tim");
+  tim.innerHTML = "❤️";
+
+  tim.style.left = Math.random() * window.innerWidth + "px";
+  tim.style.fontSize = (15 + Math.random()*25) + "px";
+
+  document.body.appendChild(tim);
+
+  setTimeout(()=>{
+    tim.remove();
+  },4000);
+}
+
+
+// ===== Nội dung thư =====
+const vanBan = [
+  "Cô ơi,",
+  "",
+  "Chúng con có thể quên một bài tập khó,",
+  "nhưng sẽ không bao giờ quên ánh mắt dịu dàng",
+  "và những lời dạy làm người của cô.",
+  "",
+  "Con thuyền năm ấy vẫn tiếp tục ra khơi,",
+  "nhưng người cầm lái tận tụy nhất vẫn mãi là cô.",
+  "",
+  "Chúng con biết ơn và trân trọng từng bài học,",
+  "từng nụ cười, từng sự bao dung cô dành cho chúng con.",
+  "",
+  "Học trò của cô ❤️"
+];
+
+function hienChu(){
+  const noiDung = document.getElementById("noiDung");
+  noiDung.innerHTML = "";
+
+  let i = 0;
+
+  function vietDong(){
+    if(i < vanBan.length){
+      const p = document.createElement("p");
+      p.textContent = vanBan[i];
+      p.style.opacity = 0;
+      p.style.transition = "1s";
+      noiDung.appendChild(p);
+
+      setTimeout(()=>{
+        p.style.opacity = 1;
+      },100);
+
+      i++;
+      setTimeout(vietDong, 800);
+    }
+  }
+
+  vietDong();
+}
+
+
+// ===== Mở thư =====
+function moThu(){
+  const nap = document.querySelector(".nap");
+  const laThu = document.getElementById("laThu");
+
+  nap.style.transform = "rotateX(180deg)";
+  laThu.style.opacity = "1";
+  laThu.style.transform = "translateY(0)";
+
+  for(let i=0;i<50;i++){
+    setTimeout(taoTim, i*250);
+  }
+
+  hienChu();
+}
+</script>
+</body>
+</html>

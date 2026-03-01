@@ -1,0 +1,71 @@
+p {
+	color: hsla(10, 100%, 50%, 1.0); font-family: Trushdes;
+}
+.box {
+  width: 250px;
+  padding: 15px;
+  background: linear-gradient(to right, #FF7733 0%, #FFC516);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  margin-left: 300px;
+  margin-top: 300px;
+  transition-property: transform;
+  transition-duration: 10s;
+  transition-timing-function: all ease-in-out;
+}  
+.box1:hover {transform: rotate(90deg);}
+.box {
+  width: 250px;
+  padding: 15px;
+  background: linear-gradient(to right, #FF7733, #FFC516);
+  transition: background 1s ease 
+}
+
+.box:hover {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+.box1 {width: 250px;
+  padding: 15px;
+  background: linear-gradient(to right, #FF7733 0%, #FFC516);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  margin-left: 800px;
+  margin-top: 800px;
+}
+
+.box2 {width: 250px;
+  padding: 15px;
+  background: linear-gradient(to right, #FF7733 0%, #FFC516);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  margin-left: 700px;
+  margin-top: 700px;
+}
+.parallelogram {
+  width: 220px;
+  height: 100px;
+  background: linear-gradient(to right, #FF7733, #FFC516);
+
+  clip-path: polygon(
+    20% 0%,
+    100% 0%,
+    80% 100%,
+    0% 100%
+  );
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-weight: bold;
+}
+

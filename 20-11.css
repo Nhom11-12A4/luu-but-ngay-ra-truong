@@ -1,0 +1,333 @@
+.box {
+	width: 500px;
+	background: linear-gradient(to right, #FF7733, #FFC516);
+	padding: 50px;
+	border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+	font-family: sans-serif;
+	font-weight: bold;
+	color: rgba(255, 255, 255, 1);
+	margin: 0 auto;
+	font-family: "Fz Cat Comic", sans-serif;
+  src: url("FzCatComic.ttf");
+	font-size: 20px;
+}
+.banner {
+  position: relative;
+  background: url("cm20-11.png") center 10% no-repeat;
+  background-size: cover;    
+  height: 600px;              
+  text-align: center;
+  font-family: "Fz Cat Comic", sans-serif;
+  src: url("FzCatComic.ttf");
+}
+.gradient-text { 
+  font-size: 75px;
+   font-weight: bold;
+    color: rgba(248, 0, 75, 1); }
+.text-shadow {
+	text-shadow: 0 2px 10px rgba(0, 70, 248, 1)
+}
+.slogan{
+  background: linear-gradient(to right, #1f4037, #134e5e);
+  text-align: center;
+  width: 100%;
+  padding: 7rem 3rem;
+  box-sizing: border-box;}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1px;
+  max-width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+.block_3{
+  flex: 1 1 33.333%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.gradient-text-chu{
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #ff7733;
+  background: linear-gradient(to right, #ff7733, #FFC516);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer{
+  background: gainsboro;
+  padding: 15px 0;
+  border-top: 1px solid #ccc;
+    font-size: 20px; 
+}
+
+.footer-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  margin: auto;
+}
+.footer-left{
+  width: 60%;
+}
+.footer-right{
+  width: 30%;
+}
+.footer ul{
+  margin: 5px 0;
+  padding-left: 18px;
+}
+
+.link{
+  color: blue;
+  text-decoration: none;
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+.canhchu{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+ text-align: center;
+ width: 90%;
+}
+.mauchu{
+  font-size: 20px;
+  font-weight: 90;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.cell_img {
+    width: 50%;
+}
+/* ===== HOVER ẢNH ===== */
+
+.section img,
+.info-table img {
+  transition: all 0.4s ease;
+  border-radius: 15px;
+}
+
+.section img:hover,
+.info-table img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+body{
+   font-family: "Fz Cat Comic", sans-serif;
+}
+body{
+  background: linear-gradient(to bottom, #134e5e, #0c2b33);
+}
+section{
+  padding: 60px 10%;
+}
+@media (max-width: 768px){
+  .row{
+    flex-direction: column;
+  }
+
+  .block_3{
+    flex: 1 1 100%;
+  }
+
+  .mauchu{
+    font-size: 50px;
+  }
+
+  .box{
+    width: 90%;
+  }
+}
+.thu-section{
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+.phong-bi{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.than{
+  width: 100%;
+  height: 100%;
+  background: #f5ecd7;
+  border: 2px solid #c9b28f;
+  border-radius: 5px;
+}
+
+.nap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e0d4b7;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  transform-origin: top;
+  transition: 0.8s;
+}
+
+.la-thu{
+  max-width: 650px;
+  margin: 80px auto 0;
+  padding: 60px 50px;
+  border-radius: 15px;
+
+  background: linear-gradient(
+    to bottom,
+    #fffaf0,
+    #f5ecd7
+  );
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.4),
+    inset 0 0 30px rgba(0,0,0,0.05);
+
+  border: 10px solid #e0d4b7;
+
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s;
+}
+
+.la-thu p{
+  font-size: 20px;
+  line-height: 1.8;
+  color: #5a4a42;
+}
+
+.ky-ten{
+  text-align: right;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.chu-mo{
+  margin-top: 25px;
+  font-size: 18px;
+  color: #ffffff;
+  animation: nhapNhay 1.5s infinite;
+}
+
+@keyframes nhapNhay{
+  0%{opacity:1;}
+  50%{opacity:0.5;}
+  100%{opacity:1;}
+}
+@keyframes giayBay {
+  0% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(-1deg); }
+}
+
+.la-thu{
+  animation: giayBay 4s ease-in-out infinite;
+}
+.tim{
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: bayLen 4s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes bayLen{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+}
+.noi-dung-thu{
+  opacity: 1;              /* đảm bảo không bị ẩn */
+  transform: none;         /* tránh bị translate sai */
+  color: #5a4a42;          /* màu chữ đậm hơn */
+  font-size: 22px;
+  line-height: 1.8;
+}
+/* ===== Responsive Table ===== */
+@media (max-width: 768px){
+
+  .info-table tr{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-table td{
+    width: 100% !important;
+    display: block;
+    text-align: center;
+  }
+
+  .info-table img{
+    width: 90% !important;
+    max-width: 100%;
+  }
+
+}
+@media (max-width: 768px){
+
+  .gradient-text{
+    font-size: 40px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .row{
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .block_3{
+    flex: 1 1 100%;
+    padding: 15px 10px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .footer-row{
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-right{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .phong-bi{
+    width: 220px;
+    height: 150px;
+  }
+
+  .la-thu{
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+
+  .noi-dung-thu{
+    font-size: 18px;
+  }
+
+}

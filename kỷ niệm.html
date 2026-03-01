@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font dịu dàng -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Thanh Xuân – Ký Ức</title>
+<style>
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Be Vietnam Pro', sans-serif;
+  background:#fdf6f0;
+  color:#444;
+}
+
+/* ===== Banner ===== */
+
+.banner{
+  position:relative;
+  height:80vh;
+  background:url("aodoan.jpg") center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(255, 240, 240, 0.55);
+}
+
+.banner-text{
+  position:relative;
+  z-index:2;
+}
+
+.banner h1{
+  font-family:'Playfair Display', serif;
+  font-size:60px;
+  color:#7b5e57;
+}
+
+.banner p{
+  font-size:20px;
+  margin-top:15px;
+  color:#9c7b74;
+}
+
+/* ===== Slogan ===== */
+
+.slogan{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:80px 20px;
+  background:#fff;
+  text-align:center;
+}
+
+.slogan-item h2{
+  font-family:'Playfair Display', serif;
+  color:#c38eb4;
+  margin-bottom:10px;
+}
+
+.slogan-item p{
+  color:#777;
+  font-style:italic;
+}
+
+/* ===== Memories ===== */
+
+.memories{
+  width:85%;
+  margin:auto;
+  padding:60px 0;
+}
+
+.memory{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  margin-bottom:80px;
+}
+
+.memory.reverse{
+  flex-direction:row-reverse;
+}
+
+.memory img{
+  width:45%;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.memory img:hover{
+  transform:scale(1.03);
+}
+
+.memory .text{
+  width:50%;
+}
+
+.memory h3{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  color:#b47c9b;
+  margin-bottom:15px;
+}
+
+.memory p{
+  line-height:1.8;
+  color:#666;
+}
+
+/* ===== Footer ===== */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#f8e8e8;
+  color:#8a6f6f;
+}
+
+/* ===== Back Home ===== */
+
+.back-home{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:1000;
+}
+
+.back-home a{
+  background:#f4c2c2;
+  padding:10px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.back-home a:hover{
+  background:#e6a8a8;
+}
+/* Scroll animation */
+.memory{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+.memory.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.gallery{
+  text-align:center;
+  padding:80px 0;
+  background:#fffaf8;
+}
+
+.gallery h2{
+  font-family:'Playfair Display', serif;
+  margin-bottom:40px;
+  color:#b47c9b;
+}
+
+.polaroid-wrap{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.polaroid{
+  background:white;
+  padding:15px 15px 40px 15px;
+  width:220px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  transform:rotate(-3deg);
+  transition:0.4s;
+}
+
+.polaroid:nth-child(2){
+  transform:rotate(3deg);
+}
+
+.polaroid img{
+  width:100%;
+}
+
+.polaroid p{
+  margin-top:10px;
+  font-style:italic;
+  color:#777;
+}
+
+.polaroid:hover{
+  transform:scale(1.05) rotate(0deg);
+}
+.ending::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:white;
+  opacity:0;
+  pointer-events:none;
+  transition:10s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ending.active::after{
+  opacity:1;
+}
+.ending{
+  position:relative;
+  text-align:center;
+  padding:150px 20px;
+  background:white;
+  overflow:hidden;
+  transition:5s ease;
+}
+
+.ending.active{
+  opacity:0;
+}
+@media (max-width: 768px){
+
+  .banner{
+    height: 60vh;
+  }
+
+  .banner h1{
+    font-size: 34px;
+    padding: 0 15px;
+  }
+
+  .banner p{
+    font-size: 16px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .slogan{
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .memory{
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .memory.reverse{
+    flex-direction: column;
+  }
+
+  .memory img{
+    width: 100%;
+  }
+
+  .memory .text{
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px){
+
+  .polaroid{
+    width: 80%;
+  }
+
+}
+.footer{
+  background:#f8e8e8;
+  padding:40px 20px;
+  color:#8a6f6f;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  max-width:1100px;
+  margin:auto;
+  gap:40px;
+}
+
+.footer-left,
+.footer-right{
+  width:50%;
+}
+
+.footer ul{
+  margin-top:10px;
+  padding-left:18px;
+}
+
+.link{
+  text-decoration:none;
+  color:#b47c9b;
+}
+
+.link:hover{
+  text-decoration:underline;
+}
+
+.copyright{
+  margin-top:30px;
+  text-align:center;
+  font-style:italic;
+}
+@media (max-width: 768px){
+
+  .footer-row{
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-right{
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px){
+
+  .back-home a{
+    padding:8px 14px;
+    font-size:14px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACK HOME -->
+<div class="back-home">
+  <a href="moluubut.html">← Trang chủ</a>
+</div>
+
+<!-- BANNER -->
+<section class="banner">
+  <div class="overlay"></div>
+  <div class="banner-text">
+    <h1>12A4 – Gia Đình Hạnh Phúc</h1>
+  </div>
+</section>
+
+<!-- SLOGAN -->
+<section class="slogan">
+  <div class="slogan-item">
+    <h2>Thanh Xuân</h2>
+    <p>Viết hôm nay, để mai còn nhớ.</p>
+  </div>
+  <div class="slogan-item">
+    <h2>Lưu Bút</h2>
+    <p>Gửi lại vài dòng, giữ lại một thời.</p>
+  </div>
+  <div class="slogan-item">
+    <h2>Ký Ức</h2>
+    <p>Nhỏ thôi, nhưng sẽ nhớ rất lâu.</p>
+  </div>
+</section>
+
+<!-- NỘI DUNG -->
+<section class="memories">
+
+  <div class="memory">
+    <img src="banhmi.jpg">
+    <div class="text">
+      <h3>Qua nhà cô ăn bánh mì</h3>
+      <p>
+        Dưới mái hiên trường, cô không chỉ là người truyền dạy tri thức 
+        mà còn là người mẹ hiền luôn lo lắng cho chúng em từng chút một...
+      </p>
+    </div>
+  </div>
+
+  <div class="memory reverse">
+    <img src="hoatđong.jpg">
+    <div class="text">
+      <h3>Những tối tập văn nghệ</h3>
+      <p>
+        Sân trường rực sáng ánh đèn, tiếng nhạc vang khắp hành lang...
+        Tập thì mệt, nhưng chính những giây phút ấy lại trở thành ký ức đẹp nhất.
+      </p>
+    </div>
+  </div>
+
+  <div class="memory">
+    <img src="anhchoi.jpg">
+    <div class="text">
+      <h3>Những buổi tiệc tùng "cháy" hết mình</h3>
+      <p>
+        Thanh xuân đâu chỉ có sách vở, mà còn là những đêm quậy tưng bừng,
+        là những nụ cười rạng rỡ dưới ánh đèn.
+      </p>
+    </div>
+  </div>
+
+</section>
+<section class="gallery">
+  <h2>Những Khoảnh Khắc Nhỏ</h2>
+  <div class="polaroid-wrap">
+    <div class="polaroid">
+      <img src="anhlopchoi.jpg">
+      <p>Chỉ cần đủ <br>anh em là đủ vui.</p>
+    </div>
+    <div class="polaroid">
+      <img src="tapbongchuyen.jpg">
+      <p>Sân ướt nhưng vẫn cười.</p>
+    </div>
+    <div class="polaroid">
+      <img src="catbanhmi.png">
+      <p>Những buổi chiều giản dị mà nhớ mãi.</p>
+    </div>
+  </div>
+</section>
+<section class="ending">
+  <h2>Thanh xuân khép lại...</h2>
+  <p>Nhưng ký ức sẽ còn mãi.</p>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-row">
+
+    <div class="footer-left">
+      <p><b>Liên hệ:</b></p>
+      <ul>
+        <li>Điện thoại: 0123456789</li>
+        <li>Website: 
+          <a href="https://c3krongbong.daklak.edu.vn/" class="link" target="_blank">
+            Trường THPT Krông Bông
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <p><b>Xem thêm:</b></p>
+      <ul>
+        <li><a href="mo20-11.html" class="link">20/11 Ngày nhà giáo Việt Nam</a></li>
+        <li><a href="tet2026.html" class="link">Phong tục ngày tết</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    12A4 – Một hành trình đẹp nhất của tuổi trẻ 💌
+  </p>
+</footer>
+<script>
+const items = document.querySelectorAll(".memory");
+const ending = document.querySelector(".ending");
+
+window.addEventListener("scroll", () => {
+
+  // Hiệu ứng memory
+  const trigger = window.innerHeight * 0.85;
+
+  items.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+
+    if(top < trigger){
+      item.classList.add("show");
+    }
+  });
+
+  // Hiệu ứng ending
+  const endTop = ending.getBoundingClientRect().top;
+  const screen = window.innerHeight;
+
+  if(endTop < screen - 100){
+    ending.classList.add("active");
+  }
+
+});
+</script>
+</body>
+</html>

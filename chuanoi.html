@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<style>
+    body{
+  margin:0;
+  height:100vh;
+  background: radial-gradient(circle at bottom, #001a4d, #000814);
+  overflow:auto;
+}
+.guestbook{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:320px;
+  background:rgba(0,0,0,0.4);
+  padding:15px;
+  border-radius:12px;
+  backdrop-filter: blur(6px);
+  box-shadow:0 0 15px rgba(39,245,238,0.5);
+}
+
+.guestbook textarea{
+  width:100%;
+  height:80px;
+  resize:none;
+  border:none;
+  outline:none;
+  border-radius:8px;
+  padding:8px;
+  font-size:14px;
+    box-sizing:border-box;
+}
+
+.guestbook button{
+  margin-top:8px;
+  width:100%;
+  padding:8px;
+  border:none;
+  border-radius:8px;
+  background:rgba(39,245,238,1);
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.messages{
+  position:absolute;
+  bottom:180px;
+  left:50%;
+  transform:translateX(-50%);
+  width:350px;
+  max-height:250px;
+  overflow-y:auto;
+  color:white;
+  font-family:sans-serif;
+}
+
+.message{
+  background:rgba(255,255,255,0.1);
+  margin:6px 0;
+  padding:6px 10px;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.delete-btn{
+  border:none;
+  background:red;
+  color:white;
+  border-radius:6px;
+  padding:2px 6px;
+  cursor:pointer;
+  font-size:12px;
+}
+.stars{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+/* Sao */
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  opacity:0;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%{
+    opacity:0;
+    transform:scale(0.5);
+  }
+  50%{
+    opacity:1;
+    transform:scale(2);
+  }
+  100%{
+    opacity:0;
+    transform:scale(0.5);
+  }
+}
+.actions{
+  display:flex;
+  gap:6px;
+}
+
+.like-btn{
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  border-radius:6px;
+  padding:2px 8px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.like-btn:hover{
+  transform:scale(1.1);
+}
+
+.delete-btn{
+  border:none;
+  background:red;
+  color:white;
+  border-radius:6px;
+  padding:2px 6px;
+  cursor:pointer;
+  font-size:12px;
+}
+.back-home{
+  position: fixed;   
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  z-index: 9999;    
+}
+.back-home a{
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(to right, #ff7733, #ffc516);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  font-family: "Fz Cat Comic", sans-serif;
+  src: url("FzCatComic.ttf");
+}
+
+.back-home a:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+}
+</style>
+</head>
+<body>
+<div class="back-home">
+  <a href="moluubut.html">⬅ Quay lại trang chủ</a>
+</div>
+  <div class="stars">
+  <div class="star" style="top:10%; left:20%; animation-delay:0s;"></div>
+  <div class="star" style="top:30%; left:40%; animation-delay:1s;"></div>
+  <div class="star" style="top:50%; left:70%; animation-delay:2s;"></div>
+  <div class="star" style="top:80%; left:10%; animation-delay:0.5s;"></div>
+  <div class="star" style="top:60%; left:55%; animation-delay:1.5s;"></div>
+  <div class="star" style="top:20%; left:85%; animation-delay:2.5s;"></div>
+  <div class="star" style="top:75%; left:35%; animation-delay:0.8s;"></div>
+  <div class="star" style="top:40%; left:15%; animation-delay:1.2s;"></div>
+  <div class="star" style="top:90%; left:45%; animation-delay:2s;"></div>
+  <div class="star" style="top:90%; left:80%; animation-delay:0.7s;"></div>
+</div>
+<div class="guestbook">
+  <textarea id="message" placeholder="Viết lưu bút của bạn ở đây..."></textarea>
+  <button onclick="addMessage()">Gửi ẩn danh</button>
+</div>
+<div id="messages" class="messages"></div>
+
+<script>
+let messages = JSON.parse(localStorage.getItem("guestbookMessages")) || [];
+
+function renderMessages(){
+  let box = document.getElementById("messages");
+  box.innerHTML = "";
+
+  messages.forEach((msgObj, index) => {
+    let msg = document.createElement("div");
+    msg.className = "message";
+
+    msg.innerHTML = `
+      <span>👤 Ẩn danh: ${msgObj.text}</span>
+
+      <div class="actions">
+        <button class="like-btn" onclick="likeMessage(${index})">
+          ❤️ ${msgObj.likes}
+        </button>
+        <button class="delete-btn" onclick="deleteMessage(${index})">
+          Xoá
+        </button>
+      </div>
+    `;
+
+    box.appendChild(msg);
+  });
+}
+
+function addMessage(){
+  let input = document.getElementById("message");
+  let text = input.value.trim();
+  if(text === "") return;
+
+  messages.unshift({ text: text, likes: 0 });   
+  localStorage.setItem("guestbookMessages", JSON.stringify(messages));
+
+  input.value = "";
+  renderMessages();
+}
+
+function likeMessage(index){
+  messages[index].likes++;
+  localStorage.setItem("guestbookMessages", JSON.stringify(messages));
+  renderMessages();
+}
+
+function deleteMessage(index){
+  messages.splice(index, 1);
+  localStorage.setItem("guestbookMessages", JSON.stringify(messages));
+  renderMessages();
+}
+
+renderMessages();
+</script>
+</body>
+</body>
+</html>
