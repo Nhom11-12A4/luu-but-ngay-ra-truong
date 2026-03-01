@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Fz Cat Comic';
+    src: url('fonts/FzCatComic.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Fz Cat Comic', sans-serif;
+}
 .box {
 	width: 500px;
 	background: linear-gradient(to right, #FF7733, #FFC516);
