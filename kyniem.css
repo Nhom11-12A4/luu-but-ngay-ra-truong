@@ -335,3 +335,12 @@ footer{
   }
 
 }
+.ending h2{
+  font-size: 70px;
+  letter-spacing: 2px;
+}
+
+.ending p{
+  font-size: 32px;
+  margin-top: 10px;
+}
