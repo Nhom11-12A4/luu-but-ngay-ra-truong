@@ -222,8 +222,11 @@ section{
 }
 .chu-mo{
   margin-top: 25px;
-  font-size: 18px;
-  color: #ff4d6d;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff4d6d, #ff9a44);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: nhapNhay 1.5s infinite;
 }
 
