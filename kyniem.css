@@ -336,11 +336,13 @@ footer{
 
 }
 .ending h2{
-  font-size: 70px;
-  letter-spacing: 2px;
+  font-size: 100px;
+  font-family:'Playfair Display', serif;
+  color:#b47c9b;
 }
 
 .ending p{
-  font-size: 32px;
-  margin-top: 10px;
+  font-size: 42px;
+  color:#7b5e57;
+  margin-top:15px;
 }
