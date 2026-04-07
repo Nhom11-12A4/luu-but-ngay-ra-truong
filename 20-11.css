@@ -108,9 +108,9 @@ font-family: 'Fz Cat Comic', sans-serif;
 }
 .mauchu{
   font-size: 20px;
-  font-weight: 90;
-  color: #ffffff;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  font-weight: 500;
+  color: #1a2a44;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 .cell_img {
     width: 50%;
@@ -223,7 +223,7 @@ section{
 .chu-mo{
   margin-top: 25px;
   font-size: 18px;
-  color: #ffffff;
+  color: #ff4d6d;
   animation: nhapNhay 1.5s infinite;
 }
 
