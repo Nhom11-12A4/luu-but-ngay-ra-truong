@@ -121,43 +121,26 @@ a:hover{
   height:120px;
   object-fit:cover;
   border-radius:15px;
-  box-shadow:0 0 15px white;
+  transform-origin:-420px center;
+  animation: keepStraight 40s linear infinite;
 }
 
-/* 6 ảnh trên vòng tròn */
-
-.circle img:nth-child(1){
-  transform:rotate(0deg) translate(420px) rotate(0deg);
-}
-
-.circle img:nth-child(2){
-  transform:rotate(60deg) translate(420px) rotate(-60deg);
-}
-
-.circle img:nth-child(3){
-  transform:rotate(120deg) translate(420px) rotate(-120deg);
-}
-
-.circle img:nth-child(4){
-  transform:rotate(180deg) translate(420px) rotate(-180deg);
-}
-
-.circle img:nth-child(5){
-  transform:rotate(240deg) translate(420px) rotate(-240deg);
-}
-
-.circle img:nth-child(6){
-  transform:rotate(300deg) translate(420px) rotate(-300deg);
-}
-
-@keyframes spin{
+@keyframes keepStraight{
   from{
-    transform:translateX(-50%) rotate(0deg);
+    transform:rotate(0deg);
   }
   to{
-    transform:translateX(-50%) rotate(360deg);
+    transform:rotate(-360deg);
   }
 }
+/* 6 ảnh trên vòng tròn */
+
+.circle img:nth-child(1){ transform:rotate(0deg) translate(420px); }
+.circle img:nth-child(2){ transform:rotate(60deg) translate(420px); }
+.circle img:nth-child(3){ transform:rotate(120deg) translate(420px); }
+.circle img:nth-child(4){ transform:rotate(180deg) translate(420px); }
+.circle img:nth-child(5){ transform:rotate(240deg) translate(420px); }
+.circle img:nth-child(6){ transform:rotate(300deg) translate(420px); }
 .circle img{
   border:3px solid white;
 }
