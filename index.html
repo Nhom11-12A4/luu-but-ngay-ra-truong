@@ -103,6 +103,36 @@ a{
 a:hover{
   color:#ffffff;
 }
+.circle-gallery{
+  position:absolute;
+  top:55%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:400px;
+  height:400px;
+  border-radius:50%;
+  animation: spin 20s linear infinite;
+}
+
+.circle-gallery img{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:15px;
+  object-fit:cover;
+  box-shadow:0 0 10px white;
+}
+
+.circle-gallery img:nth-child(1){ top:0; left:50%; transform:translateX(-50%); }
+.circle-gallery img:nth-child(2){ top:25%; right:0; }
+.circle-gallery img:nth-child(3){ bottom:25%; right:0; }
+.circle-gallery img:nth-child(4){ bottom:0; left:50%; transform:translateX(-50%); }
+.circle-gallery img:nth-child(5){ top:25%; left:0; }
+
+@keyframes spin{
+  from{ transform:translate(-50%,-50%) rotate(0deg); }
+  to{ transform:translate(-50%,-50%) rotate(360deg); }
+}
 </style>
 </head>
 
@@ -126,5 +156,12 @@ a:hover{
 <div class="text text-align1"><a href="kỷ niệm.html">Kỷ niệm
 <br>khó quên</a></div>
 <div class="text text-align2"><a href="chuanoi.html">Điều chưa<br>kịp nói</div>
+<div class="circle-gallery">
+  <img src="lop.jpg">
+  <img src="cong.jpg">
+  <img src="26-3.jpg">
+  <img src="aodoan.jpg">
+  <img src="anhlop.jpg">
+</div>
 </body>
 </html>
