@@ -103,35 +103,60 @@ a{
 a:hover{
   color:#ffffff;
 }
-.circle-gallery{
+.circle{
   position:absolute;
   top:55%;
   left:50%;
+  width:500px;
+  height:500px;
   transform:translate(-50%,-50%);
-  width:400px;
-  height:400px;
-  border-radius:50%;
-  animation: spin 20s linear infinite;
+  animation: spin 25s linear infinite;
 }
 
-.circle-gallery img{
+.circle img{
   position:absolute;
-  width:90px;
-  height:90px;
-  border-radius:15px;
+  top:50%;
+  left:50%;
+  width:100px;
+  height:100px;
   object-fit:cover;
-  box-shadow:0 0 10px white;
+  border-radius:15px;
+  box-shadow:0 0 15px white;
 }
 
-.circle-gallery img:nth-child(1){ top:0; left:50%; transform:translateX(-50%); }
-.circle-gallery img:nth-child(2){ top:25%; right:0; }
-.circle-gallery img:nth-child(3){ bottom:25%; right:0; }
-.circle-gallery img:nth-child(4){ bottom:0; left:50%; transform:translateX(-50%); }
-.circle-gallery img:nth-child(5){ top:25%; left:0; }
+/* chia 6 ảnh quanh vòng tròn */
+
+.circle img:nth-child(1){
+  transform:rotate(0deg) translate(220px) rotate(0deg);
+}
+
+.circle img:nth-child(2){
+  transform:rotate(60deg) translate(220px) rotate(-60deg);
+}
+
+.circle img:nth-child(3){
+  transform:rotate(120deg) translate(220px) rotate(-120deg);
+}
+
+.circle img:nth-child(4){
+  transform:rotate(180deg) translate(220px) rotate(-180deg);
+}
+
+.circle img:nth-child(5){
+  transform:rotate(240deg) translate(220px) rotate(-240deg);
+}
+
+.circle img:nth-child(6){
+  transform:rotate(300deg) translate(220px) rotate(-300deg);
+}
 
 @keyframes spin{
-  from{ transform:translate(-50%,-50%) rotate(0deg); }
-  to{ transform:translate(-50%,-50%) rotate(360deg); }
+  from{
+    transform:translate(-50%,-50%) rotate(0deg);
+  }
+  to{
+    transform:translate(-50%,-50%) rotate(360deg);
+  }
 }
 </style>
 </head>
@@ -156,12 +181,13 @@ a:hover{
 <div class="text text-align1"><a href="kỷ niệm.html">Kỷ niệm
 <br>khó quên</a></div>
 <div class="text text-align2"><a href="chuanoi.html">Điều chưa<br>kịp nói</div>
-<div class="circle-gallery">
+<div class="circle">
   <img src="lop.jpg">
   <img src="cong.jpg">
   <img src="26-3.jpg">
   <img src="aodoan.jpg">
   <img src="thamco.jpg">
+  <img src="san.jpg">
 </div>
 </body>
 </html>
