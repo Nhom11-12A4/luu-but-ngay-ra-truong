@@ -13,7 +13,7 @@ body {
 }
   body{
   margin:0;
-  height:100vh;
+  min-height:200vh; /* Cho phép cuộn xuống */
   background: radial-gradient(circle at bottom, #0f2027, #203a43, #2c5364);
   overflow:hidden;
 }
@@ -154,8 +154,9 @@ a:hover{
   transition:0.3s;
 }
 .timeline{
-  position:absolute;bottom:5%;left:50%;transform:translateX(-50%);
-  display:flex;gap:40px;
+  position:relative;
+  margin-top:120vh; /* Đẩy xuống để phải kéo mới thấy */
+  display:flex;gap:40px;justify-content:center;
 }
 .card{
   width:260px;padding:10px;border-radius:15px;
@@ -203,22 +204,37 @@ a:hover{
 <div class="text text-align2"><a href="chuanoi.html">Điều chưa<br>kịp nói</div>
 <div class="timeline">
   <div class="card">
-    <img src="lop10.jpg" alt="Lớp 10">
+    <img src="anhlop.jpg" alt="Lớp 10">
     <h3>Lớp 10</h3>
     <p>Những ngày đầu làm quen, bỡ ngỡ nhưng đầy háo hức.</p>
   </div>
 
   <div class="card">
-    <img src="lop11.jpg" alt="Lớp 11">
+    <img src="san.jpg" alt="Lớp 11">
     <h3>Lớp 11</h3>
     <p>Nhiều hoạt động, trưởng thành hơn, gắn kết bạn bè.</p>
   </div>
 
   <div class="card">
-    <img src="lop12.jpg" alt="Lớp 12">
+    <img src="26-3.jpg" alt="Lớp 12">
     <h3>Lớp 12</h3>
     <p>Ôn thi, kỷ niệm, những cảm xúc cuối cấp khó quên.</p>
   </div>
 </div>
+<div class="final-section">
+  <p class="final-quote">“Lớp tui có lúc cãi nhau, có lúc cười muốn xỉu, nhưng chưa bao giờ rời nhau khi cần.”</p>
+</div>
+
+<style>
+.final-section{
+  text-align:center;
+  margin:120px 0 80px 0;
+  color:white;
+}
+.final-quote{
+  font-size:36px;
+  font-weight:900;
+  text-shadow:0 0 20px #00eaff;
+}
 </body>
 </html>
