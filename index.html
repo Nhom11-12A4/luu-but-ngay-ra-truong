@@ -139,6 +139,54 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
   position:absolute;
   z-index:10;
 }
+.text-title{
+  margin-top:100px; /* 🔥 đẩy xuống dưới navbar */
+  position:relative;
+}
+.footer{
+  margin-top:100px;
+  padding:40px 20px;
+  text-align:center;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(8px);
+  color:white;
+  border-top:1px solid rgba(255,255,255,0.3);
+}
+
+.footer h2{
+  font-size:28px;
+  color:#7df9ff;
+  text-shadow:0 0 10px #00eaff;
+}
+
+.footer h3{
+  margin-top:20px;
+  color:#ffd6ff;
+}
+
+.footer p{
+  margin:5px 0;
+}
+
+.footer ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer li{
+  margin:8px 0;
+}
+
+.footer a{
+  color:#fff3b0;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.footer a:hover{
+  color:#00eaff;
+  text-shadow:0 0 10px #00eaff;
+}
 </style>
 </head>
 <body>
@@ -223,7 +271,9 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
 
 <!-- Closing quote -->
 <div class="final-section">
-  <p class="final-quote">“Lớp tui có lúc cãi nhau, có lúc cười muốn xỉu, nhưng chưa bao giờ rời nhau khi cần.”</p>
+  <p class="final-quote">“Tuy có lúc cãi nhau <br>
+    Có lúc cười muốn xỉu <br>
+    Nhưng chưa bao giờ rời nhau khi cần.”</p>
 </div>
 
 <style>
@@ -248,5 +298,21 @@ function toggleMenu(){
   }
 }
 </script>
+<div class="footer">
+  <h2>Liên hệ</h2>
+
+  <p>📞 Điện thoại: 0123456789</p>
+<p>🌐 Website: 
+  <a href="https://c3krongbong.daklak.edu.vn/" target="_blank">
+    Trường THPT Krông Bông
+  </a>
+</p>
+
+  <h3>Xem thêm</h3>
+  <ul>
+    <li><a href="#">20/11 Ngày nhà giáo Việt Nam</a></li>
+    <li><a href="#">Phong tục ngày tết</a></li>
+  </ul>
+</div>
 </body>
 </html>
