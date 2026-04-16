@@ -452,10 +452,22 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
+.section {
+  display: flex;
+  gap: 30px;
+  margin: 60px auto;
+  align-items: center;
+  width: 90%;
+}
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+body {
+  margin: 0;
+}
 </style>
 </head>
 <body>
-<div class="section fade-in">
   <div class="banner">
     <div class="text-tilte text-shadow canhchu">PHONG TỤC<br>
 NGÀY TẾT
@@ -713,6 +725,5 @@ window.addEventListener("scroll", () => {
 <script>
   document.body.style.background = "linear-gradient(to right, #8B0000, #FF4500)";
 </script>
-</div>
 </body>
 </html>
