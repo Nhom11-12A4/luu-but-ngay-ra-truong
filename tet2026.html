@@ -87,7 +87,7 @@ body{
 }
 .banner {
   position: relative;
-  background: url("backgroudtet2026.jpg") center 10% no-repeat;
+  background: url("tetnen.jpg") center 10% no-repeat;
   background-size: cover;    
   height: 600px;              
   text-align: center;
@@ -226,7 +226,7 @@ body{
   opacity:1;
 }
 .que-title{
-   color: darkred;
+   color: #ffd700;
 }
 .flash {
   position: fixed;
@@ -429,10 +429,33 @@ body{
   padding: 25px;
   border-radius: 15px;
 }
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.text-tilte {
+  color: #FFD700;
+  font-size: 80px;
+  text-shadow: 0 5px 25px rgba(255, 215, 0, 0.8);
+  position: relative;
+  z-index: 2;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
-
+<div class="section fade-in">
   <div class="banner">
     <div class="text-tilte text-shadow canhchu">PHONG TỤC<br>
 NGÀY TẾT
@@ -674,6 +697,21 @@ function taoPhaoXungQuanh() {
     phao.remove();
   }, 1000);
 }
+</script>
+<script>
+  const items = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+  items.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("show");
+    }
+  });
+});
+</script>
+<script>
+  document.body.style.background = "linear-gradient(to right, #8B0000, #FF4500)";
 </script>
 </div>
 </body>
