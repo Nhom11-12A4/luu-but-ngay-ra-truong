@@ -14,10 +14,11 @@
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 30px;
+  padding:0 20px;
   background:rgba(0,0,0,0.4);
   backdrop-filter:blur(8px);
   z-index:1000;
+  box-sizing:border-box;
 }
 
 /* Logo */
@@ -25,17 +26,24 @@
   height:50px;
 }
 
-/* Title */
+/* Title ở GIỮA THẬT */
 .title{
-  font-size:28px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:26px;
   font-weight:bold;
   color:#7df9ff;
   text-shadow:0 0 10px #00eaff;
 }
 
 /* Menu */
+.menu{
+  display:flex;
+  gap:20px;
+}
+
 .menu a{
-  margin-left:20px;
   color:#fff3b0;
   text-decoration:none;
   font-size:18px;
@@ -45,6 +53,14 @@
 .menu a:hover{
   color:#00eaff;
   text-shadow:0 0 10px #00eaff;
+}
+
+/* Nút ☰ (ẩn trên PC) */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
 }
 @font-face {
   font-family: 'Fz Cat Comic';
@@ -131,7 +147,19 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
     <img src="logo.png" alt="logo">
   </div>
 
-  <div class="title">LƯU BÚT 12A1</div>
+  <div class="title">LƯU BÚT 12A4</div>
+
+  <div class="menu" id="menu">
+    <a href="#">Trang chủ</a>
+    <a href="kỷ niệm.html">Kỷ niệm</a>
+    <a href="chuanoi.html">Chưa nói</a>
+    <a href="#">Liên hệ</a>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
+
+  <div class="title">LƯU BÚT 12A4</div>
 
   <div class="menu">
     <a href="#">Trang chủ</a>
@@ -210,6 +238,15 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
   text-shadow:0 0 20px #00eaff;
 }
 </style>
-
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  if(menu.style.display === "flex"){
+    menu.style.display = "none";
+  }else{
+    menu.style.display = "flex";
+  }
+}
+</script>
 </body>
 </html>
