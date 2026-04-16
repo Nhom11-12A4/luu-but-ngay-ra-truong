@@ -407,26 +407,32 @@ body{
 .link {
   color: #ffd700;
 }
+.content h2 {
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+.content p {
+  font-size: 20px;   /* chữ nội dung */
+  line-height: 1.8;
+}
+.content h2 {
+  color: #FFD700;
+}
+.content p {
+  color: #fff8e1;
+}
+.content h2 {
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.6);
+}
+.content {
+  background: rgba(0,0,0,0.25);
+  padding: 25px;
+  border-radius: 15px;
+}
 </style>
 </head>
 <body>
-<!-- Hoa rơi -->
-<div class="hoa-container"></div>
 
-<!-- Ánh sáng -->
-<div class="light-overlay"></div>
-<div class="que-container que-title">
-  <h2>🧧 QUẺ ĐẦU NĂM 2026 🧧</h2>
-
-  <div class="baolixi" onclick="rutQue()" id="baolixi">
-    🧧
-  </div>
-
-  <div id="ketqua" class="ketqua"></div>
-
-  <!-- Âm thanh -->
-  <audio id="ting" src="ting.mp3"></audio>
-</div>
   <div class="banner">
     <div class="text-tilte text-shadow canhchu">PHONG TỤC<br>
 NGÀY TẾT
@@ -485,6 +491,23 @@ NGÀY TẾT
     </div>
   </div>
 </footer>
+<!-- Hoa rơi -->
+<div class="hoa-container"></div>
+
+<!-- Ánh sáng -->
+<div class="light-overlay"></div>
+<div class="que-container que-title">
+  <h2>🧧 QUẺ ĐẦU NĂM 2026 🧧</h2>
+
+  <div class="baolixi" onclick="rutQue()" id="baolixi">
+    🧧
+  </div>
+
+  <div id="ketqua" class="ketqua"></div>
+
+  <!-- Âm thanh -->
+  <audio id="ting" src="ting.mp3"></audio>
+</div>
 <script>
 const container = document.querySelector(".hoa-container");
 
