@@ -5,7 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
 <style>
-  /* Navbar */
+  .music-btn{
+  margin-left:15px;
+  font-size:20px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.5);
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+  padding:5px 10px;
+  transition:0.3s;
+}
+
+.music-btn:hover{
+  background:#00eaff;
+  color:black;
+  box-shadow:0 0 10px #00eaff;
+}
+/* Navbar */
 .navbar{
   position:fixed;
   top:0;
@@ -15,10 +32,11 @@
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 30px;
+  padding:0 20px;
   background:rgba(0,0,0,0.4);
   backdrop-filter:blur(8px);
   z-index:1000;
+  box-sizing:border-box;
 }
 
 /* Logo */
@@ -26,17 +44,24 @@
   height:50px;
 }
 
-/* Title */
+/* Title ở GIỮA THẬT */
 .title{
-  font-size:28px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:26px;
   font-weight:bold;
   color:#7df9ff;
   text-shadow:0 0 10px #00eaff;
 }
 
 /* Menu */
+.menu{
+  display:flex;
+  gap:20px;
+}
+
 .menu a{
-  margin-left:20px;
   color:#fff3b0;
   text-decoration:none;
   font-size:18px;
@@ -46,6 +71,14 @@
 .menu a:hover{
   color:#00eaff;
   text-shadow:0 0 10px #00eaff;
+}
+
+/* Nút ☰ (ẩn trên PC) */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
 }
 @font-face {
     font-family: 'Fz Cat Comic';
@@ -809,7 +842,6 @@ body {
 <div class="hoa-container"></div>
 
 <!-- Ánh sáng -->
-<div class="light-overlay"></div>
 <div class="que-container que-title">
   <h2>🧧 QUẺ ĐẦU NĂM 2026 🧧</h2>
 
@@ -1171,14 +1203,49 @@ function xemLichSu(){
     <img src="logo.png" alt="logo">
   </div>
 
-  <div class="title">LƯU BÚT 12A1</div>
+  <div class="title">LƯU BÚT 12A4</div>
 
-  <div class="menu">
+  <div class="menu" id="menu">
     <a href="#">Trang chủ</a>
     <a href="kỷ niệm.html">Kỷ niệm</a>
     <a href="chuanoi.html">Chưa nói</a>
     <a href="#">Liên hệ</a>
   </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<audio id="music" loop>
+  <source src="nhac.mp3" type="audio/mpeg">
+</audio>
 </div>
+<script>
+let isPlaying = false;
+
+function toggleMusic(){
+  const music = document.getElementById("music");
+  const btn = document.querySelector(".music-btn");
+
+  if(isPlaying){
+    music.pause();
+    btn.textContent = "🎵";
+  }else{
+    music.play();
+    btn.textContent = "⏸";
+  }
+
+  isPlaying = !isPlaying;
+}
+</script>
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  if(menu.style.display === "flex"){
+    menu.style.display = "none";
+  }else{
+    menu.style.display = "flex";
+  }
+}
+</script>
 </body>
 </html>
