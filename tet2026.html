@@ -643,7 +643,6 @@ body{
 }
 body{
   margin: 0;
-  background: linear-gradient(to right, #8B0000, #FF4500);
   transition: background 0.8s ease;
 }
 .banner::after {
@@ -1000,10 +999,12 @@ function noChu(text, color, size = "60px", isRainbow = false){
   // 📳 rung mạnh hơn
   rungMan();
 
-  setTimeout(() => {
-    document.body.classList.remove("full-rainbow");
-    document.body.classList.remove("slowmo");
-  }, 1500);
+setTimeout(() => {
+  document.body.classList.remove("full-rainbow");
+  document.body.classList.remove("slowmo");
+
+  doiNen("jackpot"); // 👈 trả lại nền đúng sau hiệu ứng
+}, 1500);
 }
 </script>
 <script>
@@ -1069,6 +1070,11 @@ function xemLichSu(){
 
   div.innerHTML = "<b>📜 10 lần gần nhất:</b><br>" +
     history.map((item, i) => `${i+1}. ${item}`).join("<br>");
+}
+</script>
+<script>
+window.onload = () => {
+  doiNen("thuong"); // nền mặc định khi vào web
 }
 </script>
 </body>
