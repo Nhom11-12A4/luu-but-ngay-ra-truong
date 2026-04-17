@@ -658,19 +658,19 @@ body {
   background-attachment: fixed;
 }
 .nen-jackpot{
-  background: radial-gradient(circle at center, #FFD700 0%, #FF8C00 30%, #8B0000 80%);
+  background: radial-gradient(circle at center, #FFD700, #FF8C00, #8B0000);
 }
 
 .nen-tot{
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
 .nen-thuong{
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
 }
 
 .nen-xui{
-  background: linear-gradient(135deg, #232526, #414345);
+  background: linear-gradient(135deg, #232526, #0f2027);
 }
   .footer {
   background: rgba(0,0,0,0.6); /* thay vì #222 */
@@ -696,7 +696,7 @@ body {
   content: "";
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(8px);
   z-index: -1;
 }
 </style>
@@ -1120,11 +1120,6 @@ function xemLichSu(){
 </script>
 <script>
   document.body.style.minHeight = "200vh";
-</script>
-<script>
-window.onload = () => {
-  doiNen("thuong"); // nền mặc định khi vào web
-}
 </script>
 </body>
 </html>
