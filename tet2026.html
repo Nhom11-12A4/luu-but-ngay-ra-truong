@@ -1033,6 +1033,11 @@ function noChu(text, color, size = "60px", isRainbow = false){
 <script>
 function xemTyLe(){
   const div = document.getElementById("thongke");
+   lichsu.innerHTML = "";
+  if(div.innerHTML !== ""){
+    div.innerHTML = ""; // 👈 ẩn đi
+    return;
+  }
 
   div.innerHTML = `
   🎯 TỈ LỆ QUẺ:<br>
@@ -1046,6 +1051,14 @@ function xemTyLe(){
 
 function xemLichSu(){
   const div = document.getElementById("lichsu");
+  const thongke = document.getElementById("thongke");
+
+  thongke.innerHTML = ""; // 👈 ẩn tỉ lệ
+
+  if(div.innerHTML !== ""){
+    div.innerHTML = "";
+    return;
+  }
 
   let history = JSON.parse(localStorage.getItem("lichsu")) || [];
 
