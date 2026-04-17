@@ -648,6 +648,31 @@ body{
 .banner::after {
   background: rgba(0,0,0,0.2); /* giảm tối */
 }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  transition: background 0.8s ease;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.nen-jackpot{
+  background: linear-gradient(45deg, red, orange, yellow, lime, cyan, blue, violet);
+}
+
+.nen-tot{
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.nen-thuong{
+  background: linear-gradient(to right, #8B0000, #FF4500);
+}
+
+.nen-xui{
+  background: linear-gradient(to right, #2c3e50, #000000);
+}
 </style>
 </head>
 <body>
@@ -1008,26 +1033,21 @@ function sieuCap(){
 <script>
   function doiNen(type){
 
-  document.body.classList.remove("full-rainbow"); // 👈 QUAN TRỌNG
+  document.body.classList.remove(
+    "nen-jackpot","nen-tot","nen-thuong","nen-xui"
+  );
 
   if(type === "jackpot"){
-    document.body.style.background =
-      "linear-gradient(45deg, red, orange, yellow, lime, cyan, blue, violet)";
+    document.body.classList.add("nen-jackpot");
   }
-
   else if(type === "tot"){
-    document.body.style.background =
-      "linear-gradient(to right, #00c6ff, #0072ff)";
+    document.body.classList.add("nen-tot");
   }
-
   else if(type === "thuong"){
-    document.body.style.background =
-      "linear-gradient(to right, #8B0000, #FF4500)";
+    document.body.classList.add("nen-thuong");
   }
-
   else if(type === "xui"){
-    document.body.style.background =
-      "linear-gradient(to right, #2c3e50, #000000)";
+    document.body.classList.add("nen-xui");
   }
 }
 </script>
@@ -1071,6 +1091,9 @@ function xemLichSu(){
   div.innerHTML = "<b>📜 10 lần gần nhất:</b><br>" +
     history.map((item, i) => `${i+1}. ${item}`).join("<br>");
 }
+</script>
+<script>
+  document.body.style.minHeight = "200vh";
 </script>
 <script>
 window.onload = () => {
