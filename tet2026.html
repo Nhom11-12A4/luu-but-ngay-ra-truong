@@ -163,13 +163,15 @@ body{
 .link:hover{
   text-decoration: underline;
 }
-.canhchu{
-  position: absolute;
-  top: 8%;    
-  left: 50%;
-  transform: translateX(-50%);
- text-align: center;
- width: 90%;
+.banner {
+  position: relative;
+  background: url("tetnen.jpg") center/cover no-repeat;
+  height: 600px;
+
+  display: flex;
+  align-items: center;      /* căn giữa dọc */
+  justify-content: center;  /* căn giữa ngang */
+  text-align: center;
 }
 .mauchu{
   font-size: 120px;
@@ -488,7 +490,22 @@ body {
   text-shadow: 0 0 10px #FFD700,
                0 0 20px #FFA500,
                0 0 40px #FF4500;
-  animation: glow 2s infinite alternate;
+
+  z-index: 2;
+}
+.text-tilte {
+  animation: fadeZoom 1.5s ease;
+}
+
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes glow {
@@ -605,11 +622,11 @@ html {
 </style>
 </head>
 <body>
-  <div class="banner">
-    <div class="text-tilte text-shadow canhchu">PHONG TỤC<br>
-NGÀY TẾT
-</div>
+<div class="banner">
+  <div class="text-tilte text-shadow">
+    PHONG TỤC<br>NGÀY TẾT
   </div>
+</div>
 <div class="slogan">
   <div class="row" style="background-color: #8B0000">
     <div class="block_3 gradient-text-chu"><h2> KHAI XUÂN</h2><p><h3><em>Mở đầu năm mới, mở lòng đón điều may.</em></h3></p></div>
@@ -744,34 +761,47 @@ let queTrungBinh = [
 
     sound.play();
 
-    let random = Math.random();
-    let ketQuaText;
+let random = Math.random();
+let ketQuaText;
 
-    if (random < 0.1) {
+if (random < 0.01) {
 
-      ketQuaText = "💎 JACKPOT SIÊU TO 💎";
-      ketqua.style.color = "#fff";
+  // 💎 SIÊU HIẾM 1%
+  ketQuaText = "💎 JACKPOT VÔ CỰC 💎";
+  ketqua.style.color = "#fff";
 
-      noLon();
-      rungMan();
-      noChu(ketQuaText, null, "100px", true);
+  noLon();
+  sieuCap(); // 👈 hiệu ứng đặc biệt
+  noChu(ketQuaText, null, "120px", true);
 
-    } else if (random < 0.4) {
+} else if (random < 0.1) {
 
-      ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
-      ketqua.style.color = "#00CED1";
+  // 🟣 HIẾM
+  ketQuaText = "💰 TRÚNG LỚN 💰";
+  ketqua.style.color = "#FFD700";
 
-      noLon();
-      noChu(ketQuaText, "#00CED1", "80px");
+  noLon();
+  rungMan();
+  noChu(ketQuaText, "#FFD700", "100px");
 
-    } else {
+} else if (random < 0.4) {
 
-      ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
-      ketqua.style.color = "#FFD700";
+  // 🔵 KHÁ
+  ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
+  ketqua.style.color = "#00CED1";
 
-      noChu(ketQuaText, "#FFD700", "50px");
+  noLon();
+  noChu(ketQuaText, "#00CED1", "80px");
 
-    }
+} else {
+
+  // 🟢 THƯỜNG
+  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
+  ketqua.style.color = "#FFD700";
+
+  noChu(ketQuaText, "#FFD700", "50px");
+
+}
 
     // 👇 HIỂN THỊ KẾT QUẢ
     ketqua.innerHTML = ketQuaText;
