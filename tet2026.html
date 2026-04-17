@@ -482,6 +482,126 @@ body {
 .content {
   width: 55%;   /* chữ chiếm phần còn lại */
 }
+.text-tilte {
+  color: #FFD700;
+  font-size: 80px;
+  text-shadow: 0 0 10px #FFD700,
+               0 0 20px #FFA500,
+               0 0 40px #FF4500;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #FFD700;
+  }
+  to {
+    text-shadow: 0 0 30px #FF4500;
+  }
+}
+.banner::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.7)
+  );
+}
+.section {
+  transition: 0.4s;
+}
+
+.section:hover {
+  transform: translateY(-10px);
+}
+.section {
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.section img {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 15px;
+  filter: brightness(0.95) contrast(1.1);
+}
+
+.section img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.1);
+}
+.content {
+  width: 55%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  border-left: 5px solid #FFD700;
+}
+html {
+  scroll-behavior: smooth;
+}
+.big-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  font-size: 60px;
+  font-weight: 900;
+  color: #FFD700;
+  text-align: center;
+  z-index: 99999;
+  text-shadow: 0 0 20px #FFD700, 0 0 40px #FF4500;
+  animation: bungNo 0.8s ease-out forwards;
+}
+
+@keyframes bungNo {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+.big-text {
+  font-size: 90px; /* to hơn */
+}
+@keyframes bungNo {
+  0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+  60% { transform: translate(-50%, -50%) scale(1.3) rotate(-3deg); }
+  70% { transform: translate(-50%, -50%) scale(1.3) rotate(3deg); }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+/* 🌈 CHỮ CẦU VỒNG */
+.rainbow {
+  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 2s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* 📳 RUNG MÀN HÌNH */
+.shake {
+  animation: shakeScreen 0.5s;
+}
+
+@keyframes shakeScreen {
+  0% { transform: translate(0,0); }
+  20% { transform: translate(-10px,5px); }
+  40% { transform: translate(10px,-5px); }
+  60% { transform: translate(-10px,5px); }
+  80% { transform: translate(10px,-5px); }
+  100% { transform: translate(0,0); }
+}
 </style>
 </head>
 <body>
@@ -496,7 +616,7 @@ NGÀY TẾT
     <div class="block_3 gradient-text-chu"><h2> LÌ XÌ MAY MẮN</h2><p><h3><em>Rút một quẻ đầu năm, nhận một chút lộc xuân.</em></h3></p></div>
     <div class="block_3 gradient-text-chu"><h2> TÀI LỘC 2026</h2><p><h3><em>Một năm an khang<br>vạn sự như ý.</em></h3></p></div>
 </div>
-<div class="section">
+<div class="section fade-in">
   <img src="dichua.png">
   <div class="content">
     <h2>Phong tục đi chùa</h2>
@@ -505,7 +625,7 @@ NGÀY TẾT
     </p>
   </div>
 </div>
-  <div class="section">
+  <div class="section fade-in">
   <img src="banhchung.png">
   <div class="content">
     <h2>Gói bánh chưng</h2>
@@ -514,7 +634,7 @@ NGÀY TẾT
     </p>
   </div>
 </div>
-  <div class="section">
+  <div class="section fade-in">
   <img src="lixitet.jpg">
   <div class="content">
     <h2>Lì xì</h2>
@@ -624,35 +744,36 @@ let queTrungBinh = [
   "🕰 CHỜ THỜI: Chưa phải lúc bùng nổ, nhưng nền tảng đang vững.",
   "🌱 NẢY MẦM: Điều tốt đang âm thầm hình thành."
 ]
-  let random = Math.random();
-  let ketQuaText;
+let random = Math.random();
+let ketQuaText;
 
-if (random < 0.25) {
+if (random < 0.1) {
 
-  // 🌟 QUẺ TỐT
+  // 🟣 SIÊU HIẾM (10%)
+  ketQuaText = "💎 JACKPOT SIÊU TO 💎";
+  ketqua.style.color = "#fff";
+
+  noLon();
+  rungMan();
+  noChu(ketQuaText, null, "100px", true); // 🌈 cầu vồng
+
+} else if (random < 0.4) {
+
+  // 🔵 HIẾM (30%)
   ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
-  ketqua.style.color = "#FFD700";
-
-  noLon();   // 💥 GỌI SIÊU CẤP HIỆU ỨNG
-
-
-} else if (random < 0.75) {
-
-  // 50% TRUNG BÌNH
-  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
   ketqua.style.color = "#00CED1";
+
+  noLon();
+  noChu(ketQuaText, "#00CED1", "80px");
 
 } else {
 
-  // 25% THỬ THÁCH
-  ketQuaText = queThuThach[Math.floor(Math.random() * queThuThach.length)];
-  ketqua.style.color = "#FF4500";
-}
+  // 🟢 THƯỜNG (60%)
+  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
+  ketqua.style.color = "#FFD700";
 
-  ketqua.innerHTML = ketQuaText;
-  ketqua.classList.add("hien");
+  noChu(ketQuaText, "#FFD700", "50px");
 
-}, 1500);
 }
 function muaPhao() {
   const phao = document.createElement("div");
@@ -741,6 +862,36 @@ window.addEventListener("scroll", () => {
 </script>
 <script>
   document.body.style.background = "linear-gradient(to right, #8B0000, #FF4500)";
+</script>
+<script>
+function noChu(text, color, size = "60px", isRainbow = false){
+
+  const div = document.createElement("div");
+  div.classList.add("big-text");
+  div.innerHTML = text;
+
+  div.style.fontSize = size;
+
+  if(isRainbow){
+    div.classList.add("rainbow");
+  } else {
+    div.style.color = color;
+  }
+
+  document.body.appendChild(div);
+
+  setTimeout(()=>{
+    div.remove();
+  }, 1200);
+}
+</script>
+<script>
+  function rungMan(){
+  document.body.classList.add("shake");
+  setTimeout(()=>{
+    document.body.classList.remove("shake");
+  }, 500);
+}
 </script>
 </body>
 </html>
