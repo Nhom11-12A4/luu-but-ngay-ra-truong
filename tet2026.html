@@ -712,13 +712,6 @@ function rutQue(){
 
   bao.classList.add("lac");
 
-  setTimeout(() => {
-
-  bao.classList.remove("lac");
-  bao.classList.add("mo");
-
-  sound.play();
-
   let queTot = [
     "🌸 BÌNH AN: Một năm yên ổn, gia đình hạnh phúc.",
     "💰 PHÁT LỘC: Tiền bạc dồi dào, công việc thuận lợi.",
@@ -744,36 +737,47 @@ let queTrungBinh = [
   "🕰 CHỜ THỜI: Chưa phải lúc bùng nổ, nhưng nền tảng đang vững.",
   "🌱 NẢY MẦM: Điều tốt đang âm thầm hình thành."
 ]
-let random = Math.random();
-let ketQuaText;
+  setTimeout(() => {
 
-if (random < 0.1) {
+    bao.classList.remove("lac");
+    bao.classList.add("mo");
 
-  // 🟣 SIÊU HIẾM (10%)
-  ketQuaText = "💎 JACKPOT SIÊU TO 💎";
-  ketqua.style.color = "#fff";
+    sound.play();
 
-  noLon();
-  rungMan();
-  noChu(ketQuaText, null, "100px", true); // 🌈 cầu vồng
+    let random = Math.random();
+    let ketQuaText;
 
-} else if (random < 0.4) {
+    if (random < 0.1) {
 
-  // 🔵 HIẾM (30%)
-  ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
-  ketqua.style.color = "#00CED1";
+      ketQuaText = "💎 JACKPOT SIÊU TO 💎";
+      ketqua.style.color = "#fff";
 
-  noLon();
-  noChu(ketQuaText, "#00CED1", "80px");
+      noLon();
+      rungMan();
+      noChu(ketQuaText, null, "100px", true);
 
-} else {
+    } else if (random < 0.4) {
 
-  // 🟢 THƯỜNG (60%)
-  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
-  ketqua.style.color = "#FFD700";
+      ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
+      ketqua.style.color = "#00CED1";
 
-  noChu(ketQuaText, "#FFD700", "50px");
+      noLon();
+      noChu(ketQuaText, "#00CED1", "80px");
 
+    } else {
+
+      ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
+      ketqua.style.color = "#FFD700";
+
+      noChu(ketQuaText, "#FFD700", "50px");
+
+    }
+
+    // 👇 HIỂN THỊ KẾT QUẢ
+    ketqua.innerHTML = ketQuaText;
+    ketqua.classList.add("hien");
+
+  }, 1500);
 }
 function muaPhao() {
   const phao = document.createElement("div");
