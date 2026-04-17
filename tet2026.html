@@ -638,6 +638,9 @@ html {
   animation-duration: 2s !important;
   transition: 2s !important;
 }
+body{
+  transition: background 0.8s ease;
+}
 </style>
 </head>
 <body>
@@ -787,8 +790,8 @@ function rutQue(){
 
     // 💎 SIÊU HIẾM 1%
     if (random < 0.01) {
-
-      ketQuaText = "💎 JACKPOT VÔ CỰC 💎";
+      doiNen("jackpot");
+      ketQuaText = "💎 ĐỖ NGUYỆN VỌNG 1 💎";
       ketqua.style.color = "#fff";
 
       noLon();
@@ -800,8 +803,8 @@ function rutQue(){
 
     // 🟣 HIẾM 9%
     else if (random < 0.1) {
-
-      ketQuaText = "💰 TRÚNG LỚN 💰";
+      doiNen("tot");
+      ketQuaText = "💰 TIỀN VÀO NHƯ NƯỚC 💰";
       ketqua.style.color = "#FFD700";
 
       noLon();
@@ -812,7 +815,7 @@ function rutQue(){
 
     // 🔵 TỐT 30%
     else if (random < 0.4) {
-
+      doiNen("tot");
       ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
       ketqua.style.color = "#00CED1";
 
@@ -823,7 +826,7 @@ function rutQue(){
 
     // 🟡 TRUNG BÌNH 30%
     else if (random < 0.7) {
-
+      doiNen("thuong");
       ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
       ketqua.style.color = "#FFD700";
 
@@ -833,7 +836,7 @@ function rutQue(){
 
     // 🔴 THỬ THÁCH 30%
     else {
-
+      doiNen("xui");
       ketQuaText = queThuThach[Math.floor(Math.random() * queThuThach.length)];
       ketqua.style.color = "#FF4500";
 
@@ -982,6 +985,30 @@ function noChu(text, color, size = "60px", isRainbow = false){
     document.body.classList.remove("full-rainbow");
     document.body.classList.remove("slowmo");
   }, 1500);
+}
+</script>
+<script>
+  function doiNen(type){
+
+  if(type === "jackpot"){
+    document.body.style.background =
+      "linear-gradient(45deg, red, orange, yellow, lime, cyan, blue, violet)";
+  }
+
+  else if(type === "tot"){
+    document.body.style.background =
+      "linear-gradient(to right, #00c6ff, #0072ff)";
+  }
+
+  else if(type === "thuong"){
+    document.body.style.background =
+      "linear-gradient(to right, #8B0000, #FF4500)";
+  }
+
+  else if(type === "xui"){
+    document.body.style.background =
+      "linear-gradient(to right, #2c3e50, #000000)";
+  }
 }
 </script>
 </body>
