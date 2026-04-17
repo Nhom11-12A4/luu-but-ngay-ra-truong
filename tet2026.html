@@ -641,6 +641,14 @@ html {
 body{
   transition: background 0.8s ease;
 }
+body{
+  margin: 0;
+  background: linear-gradient(to right, #8B0000, #FF4500);
+  transition: background 0.8s ease;
+}
+.banner::after {
+  background: rgba(0,0,0,0.2); /* giảm tối */
+}
 </style>
 </head>
 <body>
@@ -937,9 +945,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-</script>
-<script>
-  document.body.style.background = "linear-gradient(to right, #8B0000, #FF4500)";
 </script>
 <script>
 function noChu(text, color, size = "60px", isRainbow = false){
