@@ -988,27 +988,27 @@ function noChu(text, color, size = "60px", isRainbow = false){
 }
 </script>
 <script>
-  function sieuCap(){
+function sieuCap(){
 
-  // 🌈 đổi màu nền
   document.body.classList.add("full-rainbow");
-
-  // 🐢 slow motion
   document.body.classList.add("slowmo");
 
-  // 📳 rung mạnh hơn
   rungMan();
 
-setTimeout(() => {
-  document.body.classList.remove("full-rainbow");
-  document.body.classList.remove("slowmo");
+  setTimeout(() => {
+    document.body.classList.remove("full-rainbow");
+    document.body.classList.remove("slowmo");
 
-  doiNen("jackpot"); // 👈 trả lại nền đúng sau hiệu ứng
-}, 1500);
+    // 👇 QUAN TRỌNG: ép lại nền sau hiệu ứng
+    doiNen("jackpot");
+
+  }, 1500);
 }
 </script>
 <script>
   function doiNen(type){
+
+  document.body.classList.remove("full-rainbow"); // 👈 QUAN TRỌNG
 
   if(type === "jackpot"){
     document.body.style.background =
