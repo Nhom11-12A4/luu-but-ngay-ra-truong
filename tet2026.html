@@ -789,61 +789,63 @@ function rutQue(){
     let ketQuaText;
 
     // 💎 SIÊU HIẾM 1%
-    if (random < 0.01) {
-      doiNen("jackpot");
-      ketQuaText = "💎 ĐỖ NGUYỆN VỌNG 1 💎";
-      ketqua.style.color = "#fff";
+if (random < 0.05) {
 
-      noLon();
-      rungMan();
-      sieuCap();
-      noChu(ketQuaText, null, "120px", true);
+  // 💎 5% JACKPOT
+  ketQuaText = "🎓 ĐỖ NGUYỆN VỌNG 1 🎓";
+  ketqua.style.color = "#fff";
 
-    }
+  noLon();
+  rungMan();
+  sieuCap();
+  noChu(ketQuaText, null, "120px", true);
+  doiNen("jackpot");
 
-    // 🟣 HIẾM 9%
-    else if (random < 0.1) {
-      doiNen("tot");
-      ketQuaText = "💰 TIỀN VÀO NHƯ NƯỚC 💰";
-      ketqua.style.color = "#FFD700";
+}
+else if (random < 0.15) {
 
-      noLon();
-      rungMan();
-      noChu(ketQuaText, "#FFD700", "100px");
+  // 💰 10% TRÚNG LỚN
+  ketQuaText = "💰 TIỀN VÀO NHƯ NƯỚC 💰";
+  ketqua.style.color = "#FFD700";
 
-    }
+  noLon();
+  rungMan();
+  noChu(ketQuaText, "#FFD700", "100px");
+  doiNen("tot");
 
-    // 🔵 TỐT 30%
-    else if (random < 0.4) {
-      doiNen("tot");
-      ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
-      ketqua.style.color = "#00CED1";
+}
+else if (random < 0.45) {
 
-      noLon();
-      noChu(ketQuaText, "#00CED1", "80px");
+  // 🔵 30% TỐT
+  ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
+  ketqua.style.color = "#00CED1";
 
-    }
+  noLon();
+  noChu(ketQuaText, "#00CED1", "80px");
+  doiNen("tot");
 
-    // 🟡 TRUNG BÌNH 30%
-    else if (random < 0.7) {
-      doiNen("thuong");
-      ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
-      ketqua.style.color = "#FFD700";
+}
+else if (random < 0.75) {
 
-      noChu(ketQuaText, "#FFD700", "50px");
+  // 🟡 30% TRUNG BÌNH
+  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
+  ketqua.style.color = "#FFD700";
 
-    }
+  noChu(ketQuaText, "#FFD700", "50px");
+  doiNen("thuong");
 
-    // 🔴 THỬ THÁCH 30%
-    else {
-      doiNen("xui");
-      ketQuaText = queThuThach[Math.floor(Math.random() * queThuThach.length)];
-      ketqua.style.color = "#FF4500";
+}
+else {
 
-      rungMan();
-      noChu(ketQuaText, "#FF4500", "60px");
+  // 🔴 25% THỬ THÁCH
+  ketQuaText = queThuThach[Math.floor(Math.random() * queThuThach.length)];
+  ketqua.style.color = "#FF4500";
 
-    }
+  rungMan();
+  noChu(ketQuaText, "#FF4500", "60px");
+  doiNen("xui");
+
+}
 
     // hiển thị
     ketqua.innerHTML = ketQuaText;
