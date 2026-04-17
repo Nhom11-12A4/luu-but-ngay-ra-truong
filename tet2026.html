@@ -491,6 +491,10 @@ body {
                0 0 20px #FFA500,
                0 0 40px #FF4500;
 
+  letter-spacing: 4px;   /* giãn chữ ngang */
+  line-height: 1.4;      /* giãn dòng -> QUAN TRỌNG */
+  word-spacing: 6px;     /* giãn khoảng cách giữa từ */
+
   z-index: 2;
 }
 .text-tilte {
@@ -692,12 +696,11 @@ body {
   .light-overlay{
   opacity: 0.15; /* nhẹ thôi */
 }
-  body::before{
-  content: "";
-  position: fixed;
-  inset: 0;
-  backdrop-filter: blur(8px);
-  z-index: -1;
+.banner {
+  padding-top: 40px;
+}
+.light-overlay{
+  display: none !important;
 }
 </style>
 </head>
