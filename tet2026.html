@@ -619,6 +619,25 @@ html {
   80% { transform: translate(10px,-5px); }
   100% { transform: translate(0,0); }
 }
+/* 🌈 Đổi màu nền toàn màn */
+.full-rainbow {
+  animation: bgRainbow 1s linear infinite;
+}
+
+@keyframes bgRainbow {
+  0% { background: red; }
+  20% { background: orange; }
+  40% { background: yellow; }
+  60% { background: lime; }
+  80% { background: cyan; }
+  100% { background: violet; }
+}
+
+/* 🐢 Slow motion */
+.slowmo * {
+  animation-duration: 2s !important;
+  transition: 2s !important;
+}
 </style>
 </head>
 <body>
@@ -727,33 +746,35 @@ function rutQue(){
   const ketqua = document.getElementById("ketqua");
   const sound = document.getElementById("ting");
 
+  // reset để mở lại nhiều lần
+  bao.classList.remove("mo");
+
   bao.classList.add("lac");
 
   let queTot = [
     "🌸 BÌNH AN: Một năm yên ổn, gia đình hạnh phúc.",
     "💰 PHÁT LỘC: Tiền bạc dồi dào, công việc thuận lợi.",
-    "❤️ NHÂN DUYÊN: Tình cảm khởi sắc, gặp được người đẹp trai/xinh gái.",
+    "❤️ NHÂN DUYÊN: Tình cảm khởi sắc.",
     "🏆 THÀNH CÔNG: Công việc có bước tiến lớn.",
     "🌟 QUÝ NHÂN: Có người giúp đỡ đúng lúc."
   ];
 
   let queThuThach = [
-    "🌧 TIỂU HẠN: Đầu năm hơi trắc trở, kiên nhẫn sẽ vượt qua.",
-    "⚠ THỬ THÁCH: Có người ganh ghét, nên cẩn trọng.",
-    "💸 HAO TÀI: Chi tiêu nhiều hơn dự tính.",
-    "🌫 NHẠT NHÒA: Mọi việc chưa rõ ràng, chờ thời cơ.",
-    "🌒 VẬN TRÌ: Vận khí hơi chậm, nhưng cuối năm sẽ sáng.",
-    "🔥 RÈN LUYỆN: Áp lực nhiều, nhưng đây là năm trưởng thành.",
-    "🌪 BIẾN ĐỘNG: Công việc thay đổi bất ngờ, bình tĩnh xử lý.",
-    "🔮 NHẮC NHỞ: Đừng tin người quá dễ, suy nghĩ kỹ trước khi quyết định."
+    "🌧 TIỂU HẠN: Đầu năm hơi trắc trở.",
+    "⚠ THỬ THÁCH: Có người ganh ghét.",
+    "💸 HAO TÀI: Chi tiêu nhiều.",
+    "🌫 NHẠT NHÒA: Mọi việc chưa rõ.",
+    "🔥 RÈN LUYỆN: Áp lực nhưng trưởng thành."
   ];
-let queTrungBinh = [
-  "🌤 BÌNH HÒA: Mọi việc diễn ra ổn định, không quá nổi bật.",
-  "🌾 TÍCH LŨY: Năm nay nên vun đắp hơn là bứt phá.",
-  "📘 HỌC HỎI: Có thêm kinh nghiệm quý giá.",
-  "🕰 CHỜ THỜI: Chưa phải lúc bùng nổ, nhưng nền tảng đang vững.",
-  "🌱 NẢY MẦM: Điều tốt đang âm thầm hình thành."
-]
+
+  let queTrungBinh = [
+    "🌤 BÌNH HÒA: Mọi việc ổn định.",
+    "🌾 TÍCH LŨY: Nên vun đắp.",
+    "📘 HỌC HỎI: Có thêm kinh nghiệm.",
+    "🕰 CHỜ THỜI: Chưa phải lúc bùng nổ.",
+    "🌱 NẢY MẦM: Điều tốt đang tới."
+  ];
+
   setTimeout(() => {
 
     bao.classList.remove("lac");
@@ -761,49 +782,67 @@ let queTrungBinh = [
 
     sound.play();
 
-let random = Math.random();
-let ketQuaText;
+    let random = Math.random();
+    let ketQuaText;
 
-if (random < 0.01) {
+    // 💎 SIÊU HIẾM 1%
+    if (random < 0.01) {
 
-  // 💎 SIÊU HIẾM 1%
-  ketQuaText = "💎 JACKPOT VÔ CỰC 💎";
-  ketqua.style.color = "#fff";
+      ketQuaText = "💎 JACKPOT VÔ CỰC 💎";
+      ketqua.style.color = "#fff";
 
-  noLon();
-  sieuCap(); // 👈 hiệu ứng đặc biệt
-  noChu(ketQuaText, null, "120px", true);
+      noLon();
+      rungMan();
+      sieuCap();
+      noChu(ketQuaText, null, "120px", true);
 
-} else if (random < 0.1) {
+    }
 
-  // 🟣 HIẾM
-  ketQuaText = "💰 TRÚNG LỚN 💰";
-  ketqua.style.color = "#FFD700";
+    // 🟣 HIẾM 9%
+    else if (random < 0.1) {
 
-  noLon();
-  rungMan();
-  noChu(ketQuaText, "#FFD700", "100px");
+      ketQuaText = "💰 TRÚNG LỚN 💰";
+      ketqua.style.color = "#FFD700";
 
-} else if (random < 0.4) {
+      noLon();
+      rungMan();
+      noChu(ketQuaText, "#FFD700", "100px");
 
-  // 🔵 KHÁ
-  ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
-  ketqua.style.color = "#00CED1";
+    }
 
-  noLon();
-  noChu(ketQuaText, "#00CED1", "80px");
+    // 🔵 TỐT 30%
+    else if (random < 0.4) {
 
-} else {
+      ketQuaText = queTot[Math.floor(Math.random() * queTot.length)];
+      ketqua.style.color = "#00CED1";
 
-  // 🟢 THƯỜNG
-  ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
-  ketqua.style.color = "#FFD700";
+      noLon();
+      noChu(ketQuaText, "#00CED1", "80px");
 
-  noChu(ketQuaText, "#FFD700", "50px");
+    }
 
-}
+    // 🟡 TRUNG BÌNH 30%
+    else if (random < 0.7) {
 
-    // 👇 HIỂN THỊ KẾT QUẢ
+      ketQuaText = queTrungBinh[Math.floor(Math.random() * queTrungBinh.length)];
+      ketqua.style.color = "#FFD700";
+
+      noChu(ketQuaText, "#FFD700", "50px");
+
+    }
+
+    // 🔴 THỬ THÁCH 30%
+    else {
+
+      ketQuaText = queThuThach[Math.floor(Math.random() * queThuThach.length)];
+      ketqua.style.color = "#FF4500";
+
+      rungMan();
+      noChu(ketQuaText, "#FF4500", "60px");
+
+    }
+
+    // hiển thị
     ketqua.innerHTML = ketQuaText;
     ketqua.classList.add("hien");
 
@@ -925,6 +964,24 @@ function noChu(text, color, size = "60px", isRainbow = false){
   setTimeout(()=>{
     document.body.classList.remove("shake");
   }, 500);
+}
+</script>
+<script>
+  function sieuCap(){
+
+  // 🌈 đổi màu nền
+  document.body.classList.add("full-rainbow");
+
+  // 🐢 slow motion
+  document.body.classList.add("slowmo");
+
+  // 📳 rung mạnh hơn
+  rungMan();
+
+  setTimeout(() => {
+    document.body.classList.remove("full-rainbow");
+    document.body.classList.remove("slowmo");
+  }, 1500);
 }
 </script>
 </body>
