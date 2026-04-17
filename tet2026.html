@@ -632,7 +632,6 @@ html {
   80% { background: cyan; }
   100% { background: violet; }
 }
-
 /* 🐢 Slow motion */
 .slowmo * {
   animation-duration: 2s !important;
@@ -659,7 +658,7 @@ body {
   background-attachment: fixed;
 }
 .nen-jackpot{
-  background: linear-gradient(45deg, red, orange, yellow, lime, cyan, blue, violet);
+  background: linear-gradient(135deg, #8B0000, #FF4500, #FFD700);
 }
 
 .nen-tot{
@@ -689,6 +688,16 @@ body {
   body {
   background-attachment: fixed;
   background-size: cover;
+}
+  .light-overlay{
+  opacity: 0.15; /* nhẹ thôi */
+}
+  body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(40px);
+  z-index: -1;
 }
 </style>
 </head>
