@@ -723,7 +723,11 @@ body{
   </div>
 
   <div id="ketqua" class="ketqua"></div>
+<button onclick="xemTyLe()">📊 Xem tỉ lệ</button>
+<button onclick="xemLichSu()">📜 Lịch sử</button>
 
+<div id="thongke" style="margin-top:15px;"></div>
+<div id="lichsu" style="margin-top:15px;"></div>
   <!-- Âm thanh -->
   <audio id="ting" src="ting.mp3"></audio>
 </div>
@@ -857,8 +861,16 @@ else {
 
     // hiển thị
     ketqua.innerHTML = ketQuaText;
-    ketqua.classList.add("hien");
+ketqua.classList.add("hien");
 
+// 📜 lưu lịch sử
+let history = JSON.parse(localStorage.getItem("lichsu")) || [];
+history.unshift(ketQuaText);
+
+// chỉ giữ 10 lần gần nhất
+if(history.length > 10) history.pop();
+
+localStorage.setItem("lichsu", JSON.stringify(history));
   }, 1500);
 }
 function muaPhao() {
@@ -1016,6 +1028,34 @@ function noChu(text, color, size = "60px", isRainbow = false){
     document.body.style.background =
       "linear-gradient(to right, #2c3e50, #000000)";
   }
+}
+</script>
+<script>
+function xemTyLe(){
+  const div = document.getElementById("thongke");
+
+  div.innerHTML = `
+  🎯 TỈ LỆ QUẺ:<br>
+  💎 Đỗ NV1: 5%<br>
+  💰 Tiền nhiều: 10%<br>
+  🔵 Tốt: 30%<br>
+  🟡 Trung bình: 30%<br>
+  🔴 Thử thách: 25%
+  `;
+}
+
+function xemLichSu(){
+  const div = document.getElementById("lichsu");
+
+  let history = JSON.parse(localStorage.getItem("lichsu")) || [];
+
+  if(history.length === 0){
+    div.innerHTML = "Chưa có lịch sử 😢";
+    return;
+  }
+
+  div.innerHTML = "<b>📜 10 lần gần nhất:</b><br>" +
+    history.map((item, i) => `${i+1}. ${item}`).join("<br>");
 }
 </script>
 </body>
