@@ -60,6 +60,7 @@
 .menu{
   display:flex;
   gap:20px;
+  margin-left: auto; /* 🔥 đẩy menu sang phải */
 }
 .menu{
   position:relative;
@@ -75,6 +76,17 @@
 .menu a:hover{
   color:#00eaff;
   text-shadow:0 0 10px #00eaff;
+}
+.right-group{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; /* 🔥 đẩy cả cụm sang phải */
+}
+
+.menu{
+  display: flex;
+  gap: 20px;
 }
 
 /* Nút ☰ (ẩn trên PC) */
@@ -800,6 +812,9 @@ html {
 body {
   background: transparent;
 }
+.music-btn{
+  margin-left: 10px;
+}
 </style>
 </head>
 <body>
@@ -1225,6 +1240,7 @@ function xemLichSu(){
 
   <div class="title">LƯU BÚT 12A4</div>
 
+<div class="right-group">
   <div class="menu" id="menu">
     <a href="#">Trang chủ</a>
     <a href="kỷ niệm.html">Kỷ niệm</a>
@@ -1232,9 +1248,8 @@ function xemLichSu(){
     <a href="#">Liên hệ</a>
   </div>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <button class="music-btn" onclick="toggleMusic()">🎵</button>
-
+</div>
 <audio id="music" loop>
   <source src="nhac.mp3" type="audio/mpeg">
 </audio>
