@@ -450,6 +450,27 @@ function moThu(){
 }
 
 </script>
+<audio id="music" loop>
+  <source src="Một Năm Mới Bình An.mp3" type="audio/mpeg">
+</audio>
+</div>
+<script>
+let isPlaying = false;
 
+function toggleMusic(){
+  const music = document.getElementById("music");
+  const btn = document.querySelector(".music-btn");
+
+  if(isPlaying){
+    music.pause();
+    btn.textContent = "🎵";
+  }else{
+    music.play();
+    btn.textContent = "⏸";
+  }
+
+  isPlaying = !isPlaying;
+}
+</script>
 </body>
 </html>
