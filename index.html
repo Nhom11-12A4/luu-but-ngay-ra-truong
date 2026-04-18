@@ -496,6 +496,7 @@ function toggleMenu(){
 const text = document.getElementById("memory-text");
 text.innerHTML = ""; // reset
 text.classList.add("show");
+text.style.opacity = "1"; // 🔥 BẮT BUỘC
 const delayPerLine = 2000; // mỗi dòng 2s
 const totalTime = memories.length * delayPerLine;
 
