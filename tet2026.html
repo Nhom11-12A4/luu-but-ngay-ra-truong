@@ -182,11 +182,13 @@ body{
   text-shadow: 0 2px 10px rgba(255, 253, 110, 1)
 }
 .slogan{
-  background-color: rgba(253, 58, 58, 1);
   text-align: center;
   width: 100%;
   padding: 7rem 3rem;
   box-sizing: border-box;}
+.slogan {
+  background: transparent;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -781,8 +783,22 @@ body {
 .light-overlay{
   display: none !important;
 }
-body {
+.slogan {
+  position: relative;
+}
+
+.slogan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(179, 0, 0, 0.5);
+  z-index: -1;
+}
+html {
   background: linear-gradient(135deg, #2c3e50, #4ca1af);
+}
+body {
+  background: transparent;
 }
 </style>
 </head>
@@ -1201,9 +1217,6 @@ function xemLichSu(){
   div.innerHTML = "<b>📜 10 lần gần nhất:</b><br>" +
     history.map((item, i) => `${i+1}. ${item}`).join("<br>");
 }
-</script>
-<script>
-  document.body.style.minHeight = "200vh";
 </script>
 <div class="navbar">
   <div class="logo">
