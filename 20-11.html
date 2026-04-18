@@ -292,6 +292,37 @@ background: linear-gradient(135deg, #ff8da1, #ff9aa2);
 .block_3 p {
     color: #4a0000; /* Dòng chữ nhỏ cần màu tối để dễ đọc nhất */
 }
+/* Loại bỏ hiệu ứng bóng đổ gây nhoè và làm đậm màu chữ */
+.gradient-text-chu {
+    color: #8b0000 !important; /* Màu đỏ đô đậm để cực kỳ rõ nét */
+    text-shadow: none !important; /* Tạm thời tắt shadow để chữ hết nhoè */
+    filter: none !important;      /* Tắt mọi bộ lọc làm mờ */
+}
+
+.block_3 h2 {
+    color: #a00040; /* Đỏ rượu đậm */
+    font-size: 28px;
+    font-weight: 900; /* Độ dày tối đa */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.block_3 p {
+    color: #5a2a2a; /* Nâu đậm cho phần giải thích */
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Chỉ thêm bóng đổ rất nhẹ để tạo khối mà không làm nhoè */
+.block_3 h2, .block_3 p {
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.slogan {
+    background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Thêm viền trắng mờ để tách biệt khung */
+    padding: 50px 20px;
+}
 </style>
 </head>
 
