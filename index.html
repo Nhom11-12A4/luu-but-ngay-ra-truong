@@ -277,7 +277,7 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
 }
 
 .memory-text.show{
-  animation: floatText 2s ease forwards;
+  animation: floatText 3s ease forwards;
 }
 
 @keyframes floatText{
@@ -312,6 +312,11 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
 .slowmo *{
   animation-duration: 2s !important;
   transition: 2s !important;
+}
+.memory-text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>
 </head>
@@ -487,12 +492,34 @@ function toggleMenu(){
   const overlay = document.createElement("div");
   overlay.classList.add("memory-overlay");
   document.body.appendChild(overlay);
+// 🌫 chữ hiện từng dòng
+const text = document.getElementById("memory-text");
+text.innerHTML = ""; // reset
+text.classList.add("show");
 
-  // 🌫 chữ bay
-  const text = document.getElementById("memory-text");
-  text.innerHTML = memories[Math.floor(Math.random()*memories.length)];
-  text.classList.add("show");
+memories.forEach((line, index) => {
+  setTimeout(() => {
+    const div = document.createElement("div");
+    div.textContent = line;
 
+    // style ban đầu
+    div.style.opacity = "0";
+    div.style.transform = "translateY(20px)";
+    div.style.transition = "all 0.5s ease";
+
+    text.appendChild(div);
+
+    // animate hiện lên
+    setTimeout(() => {
+      div.style.opacity = "1";
+      div.style.transform = "translateY(0)";
+    }, 50);
+
+  }, index * 1200); // mỗi dòng cách nhau 1.2s
+});
+    setTimeout(()=>{
+  text.style.opacity = "0"; // mờ dần cả khối chữ
+}, memories.length * 1200 + 1500);
   // 💥 nổ ảnh (giữ nguyên code cũ của bạn)
   document.querySelectorAll(".circle img").forEach(img=>{
     const rect = img.getBoundingClientRect();
@@ -531,7 +558,7 @@ function toggleMenu(){
     }
 
     circle.style.animation = "spin 30s linear infinite";
-  },5000);
+}, memories.length * 1200 + 2000);
 
 });
 </script>
