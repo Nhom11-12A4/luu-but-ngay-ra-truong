@@ -42,7 +42,8 @@
 .right-group{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:15px;
+  margin-right:20px; /* 🔥 thêm cái này để kéo vào */
 }
 
 /* Menu */
@@ -231,9 +232,10 @@ body{
   background: transparent; /* 🔥 bắt buộc */
 }
 .gradient-text-chu{
-  color: #8b004f;
-  font-weight: bold;
+  color:#ffd700;
+  transition:0.3s;
 }
+
 
 .block_3{
   transition: 0.3s;
@@ -245,17 +247,18 @@ body{
   box-shadow: 0 10px 25px rgba(255, 0, 100, 0.3);
   background: transparent;
 }
-.gradient-text-chu:hover {
-  color: #fff;
-  text-shadow: 
-    0 0 10px #ffd700,
-    0 0 20px #ffae00,
-    0 0 30px #ff4500;
-  transform: translateY(-5px);
+
+.gradient-text-chu:hover{
+  color:#fff;
+  text-shadow: 0 2px 8px rgba(255,215,0,0.6);
+  transform: translateY(-4px);
 }
 .slogan {
   position: relative;
   z-index: 1;
+}
+.logo img{
+  height:35px;   /* hoặc 35px nếu vẫn to */
 }
 </style>
 </head>
