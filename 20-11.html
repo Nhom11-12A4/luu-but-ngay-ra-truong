@@ -242,24 +242,41 @@ body{
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Thêm bóng trắng nhẹ phía sau để tách chữ khỏi nền */
 }
 
+/* Tăng kích thước tiêu đề Slogan */
 .block_3 h2 {
   color: #b30059;
-  font-size: 24px;
-  font-weight: 800; /* Tăng độ dày chữ */
-  margin-bottom: 10px;
+  font-size: 32px;      /* Tăng từ 22px lên 32px */
+  font-weight: 800;    /* Làm chữ dày hơn */
+  margin-bottom: 12px;
+  text-transform: uppercase; /* Viết hoa cho trang trọng */
+  letter-spacing: 1px; /* Khoảng cách chữ rộng ra cho thoáng */
 }
 
+/* Tăng kích thước đoạn văn dưới tiêu đề */
 .block_3 p {
-  color: #4a4a4a; /* Màu xám đậm cho phần sub-text để dễ đọc hơn */
-  font-size: 18px;
-  font-weight: 500;
+  color: #7a003c;
+  font-size: 20px;      /* Tăng từ 16px lên 20px */
+  font-weight: 600;
+  font-style: italic;  /* Giữ kiểu chữ nghiêng cho mềm mại */
 }
 
-/* Hiệu ứng khi di chuột vào phải thật rõ ràng */
+/* Hiệu ứng phóng lớn hơn một chút khi di chuột vào */
 .block_3:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.3); /* Hiện nền trắng mờ khi hover để chữ nổi lên */
-  border-radius: 20px;
+  transform: translateY(-8px) scale(1.05); /* Bay lên và phóng to 5% */
+}
+
+/* Nếu bạn muốn chữ "Tri ân thầy cô" rực rỡ hơn khi hover */
+.block_3:hover h2 {
+  color: #ff0066;
+  text-shadow: 0 0 15px rgba(255, 0, 102, 0.4);
+}
+@media(max-width:700px){
+  .block_3 h2 {
+    font-size: 26px; /* Trên điện thoại thì nhỏ lại một chút cho vừa màn hình */
+  }
+  .block_3 p {
+    font-size: 18px;
+  }
 }
 </style>
 </head>
