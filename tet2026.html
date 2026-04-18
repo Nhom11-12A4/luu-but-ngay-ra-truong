@@ -806,9 +806,6 @@ body {
   background: rgba(179, 0, 0, 0.5);
   z-index: -1;
 }
-html {
-  background: linear-gradient(135deg, #2c3e50, #4ca1af);
-}
 body {
   background: transparent;
 }
@@ -825,6 +822,21 @@ html, body {
 
 body {
   min-height: 100vh;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #000; /* nền mặc định fallback */
+}
+
+/* Body hiển thị nền chính */
+body {
+  background: transparent;
+  overflow-x: hidden; /* 🔥 tránh lòi nền bên phải */
+  min-height: 100vh;
+  width: 100%;
 }
 </style>
 </head>
