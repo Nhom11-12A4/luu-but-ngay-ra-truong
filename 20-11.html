@@ -14,31 +14,41 @@
 .navbar{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   height:70px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 20px;
-  background:rgba(0,0,0,0.5);
-  backdrop-filter:blur(10px);
-  z-index:999;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(8px);
+  z-index:1000;
 }
 
-.logo img{height:50px;}
-
+/* Title ở giữa */
 .title{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
+  font-size:26px;
+  font-weight:bold;
   color:#7df9ff;
-  font-size:24px;
   text-shadow:0 0 10px #00eaff;
+  pointer-events:none;
 }
 
+/* Nhóm bên phải */
+.right-group{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Menu */
 .menu{
   display:flex;
-  gap:20px;
+  gap:15px;
 }
 
 .menu a{
@@ -46,10 +56,16 @@
   text-decoration:none;
 }
 
-.menu a:hover{
-  color:#00eaff;
+/* Nút nhạc */
+.music-btn{
+  font-size:20px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.5);
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+  padding:5px 10px;
 }
-
 /* ===== FIX CHE BANNER ===== */
 .banner{
   margin-top:70px;
@@ -159,15 +175,6 @@ body{
 .footer b{
   font-size:18px;
 }
-.music-btn{
-  margin-left: 10px;
-}
-.right-group{
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-left: auto; /* 🔥 đẩy cả cụm sang phải */
-}
 
 .menu{
   display: flex;
@@ -243,8 +250,8 @@ body{
   text-shadow: 
     0 0 10px #ffd700,
     0 0 20px #ffae00,
-    0 0 40px #ff4500;
-  transform: translateY(-5px) scale(1.05);
+    0 0 30px #ff4500;
+  transform: translateY(-5px);
 }
 .slogan {
   position: relative;
