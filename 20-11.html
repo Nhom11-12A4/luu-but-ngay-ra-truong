@@ -125,6 +125,54 @@ body{
   background:rgba(255,255,255,0.7);
   color:#5a2a2a;
 }
+.footer{
+  background:#300000;
+  color:white;
+  padding:20px 0;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  width:90%;
+  margin:auto;
+  gap:40px; /* 🔥 thêm khoảng cách */
+  flex-wrap:wrap; /* 🔥 chống vỡ layout */
+}
+
+.footer-left,
+.footer-right{
+  flex:1; /* 🔥 chia đều */
+  min-width:250px; /* 🔥 chống co quá */
+}
+
+.footer ul{
+  padding-left:20px;
+  margin-top:5px;
+}
+
+.footer li{
+  margin-bottom:5px;
+}
+
+.footer b{
+  font-size:18px;
+}
+.music-btn{
+  margin-left: 10px;
+}
+.right-group{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; /* 🔥 đẩy cả cụm sang phải */
+}
+
+.menu{
+  display: flex;
+  gap: 20px;
+}
 </style>
 </head>
 
@@ -136,14 +184,7 @@ body{
     <img src="logo.png">
   </div>
 
-  <div class="title">LƯU BÚT 12A4</div>
-
-  <div class="menu">
-    <a href="index.html">Trang chủ</a>
-    <a href="kỷ niệm.html">Kỷ niệm</a>
-    <a href="chuanoi.html">Chưa nói</a>
-  </div>
-</div>
+<div class="title">LƯU BÚT 12A4</div> <div class="right-group"> <div class="menu" id="menu"> <a href="index.html">Trang chủ</a> <a href="kỷ niệm.html">Kỷ niệm</a> <a href="chuanoi.html">Chưa nói</a> </div> <button class="music-btn" onclick="toggleMusic()">🎵</button> </div> <audio id="music" loop> <source src="Một Năm Mới Bình An.mp3" type="audio/mpeg"> </audio> </div>
 
 <!-- ===== BANNER ===== -->
 <div class="banner">
