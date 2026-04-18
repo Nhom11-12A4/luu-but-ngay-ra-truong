@@ -231,28 +231,6 @@ body{
 .row{
   background: transparent; /* 🔥 bắt buộc */
 }
-.gradient-text-chu{
-  color:#ffd700;
-  transition:0.3s;
-}
-
-
-.block_3{
-  transition: 0.3s;
-  border-radius: 15px;
-}
-
-.block_3:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 0, 100, 0.3);
-  background: transparent;
-}
-
-.gradient-text-chu:hover{
-  color:#fff;
-  text-shadow: 0 2px 8px rgba(255,215,0,0.6);
-  transform: translateY(-4px);
-}
 .slogan {
   position: relative;
   z-index: 1;
@@ -260,23 +238,35 @@ body{
 .logo img{
   height:35px;   /* hoặc 35px nếu vẫn to */
 }
-.gradient-text-chu{
-  color: #b30059; /* hồng đậm - hợp nền */
+/* ===== SLOGAN TEXT FIX ===== */
+.gradient-text-chu h2{
+  color: #b30059;
+  font-size: 22px;
   font-weight: bold;
   transition: 0.3s;
 }
-.block_3 h2{
-  color: #b30059;
-  font-size: 22px;
-}
 
-.block_3 p{
+.gradient-text-chu p{
   color: #7a003c;
   font-size: 16px;
+  transition: 0.3s;
 }
-.block_3:hover h2,
-.block_3:hover p{
+
+/* hover đẹp hơn */
+.block_3:hover h2{
   color: #ff0066;
+}
+
+.block_3:hover p{
+  color: #ff4d94;
+}
+
+/* bỏ nền gây loãng chữ (nếu cần rõ hơn) */
+.block_3{
+  background: transparent;
+}
+.gradient-text-chu h2{
+  text-shadow: 0 2px 6px rgba(255, 0, 100, 0.15);
 }
 </style>
 </head>
