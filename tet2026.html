@@ -53,6 +53,7 @@
   font-weight:bold;
   color:#7df9ff;
   text-shadow:0 0 10px #00eaff;
+  pointer-events:none; /* 🔥 cực quan trọng */
 }
 
 /* Menu */
@@ -60,7 +61,10 @@
   display:flex;
   gap:20px;
 }
-
+.menu{
+  position:relative;
+  z-index:10;
+}
 .menu a{
   color:#fff3b0;
   text-decoration:none;
@@ -534,7 +538,7 @@ body{
   gap: 30px;
   margin: 60px auto;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 .section:nth-child(even) {
   flex-direction: row-reverse;
@@ -776,6 +780,9 @@ body {
 }
 .light-overlay{
   display: none !important;
+}
+body {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
 }
 </style>
 </head>
