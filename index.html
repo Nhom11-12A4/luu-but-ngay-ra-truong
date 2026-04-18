@@ -283,19 +283,23 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
 @keyframes floatText{
   0%{
     opacity:0;
-    transform: translate(-50%, 50%) scale(0.5);
+    transform: translate(-50%, 30%) scale(0.6);
   }
-  40%{
+  20%{
     opacity:1;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  80%{
+    opacity:1;
+    transform: translate(-50%, -50%) scale(1);
   }
   100%{
     opacity:0;
-    transform: translate(-50%, -120%) scale(1);
+    transform: translate(-50%, -80%) scale(1);
   }
 }
 .shake{
-  animation: shakeScreen 0.8s;
+  animation: shakeScreen 0.3s;
 }
 
 @keyframes shakeScreen{
@@ -527,7 +531,7 @@ function toggleMenu(){
     }
 
     circle.style.animation = "spin 30s linear infinite";
-  },3000);
+  },5000);
 
 });
 </script>
