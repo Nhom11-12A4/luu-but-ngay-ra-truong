@@ -344,6 +344,20 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
   z-index: 100;
   pointer-events: auto;
 }
+.text-align1,
+.text-align2{
+  position: absolute;
+  z-index: 9999; /* 🔥 cao hơn tất cả */
+  pointer-events: auto;
+}
+.circle img{
+  pointer-events: none; /* 🔥 cực quan trọng */
+}
+.text a{
+  position: relative;
+  z-index: 10000;
+  pointer-events: auto;
+}
 </style>
 </head>
 <body>
