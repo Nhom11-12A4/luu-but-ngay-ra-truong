@@ -347,7 +347,7 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
 .text-align1,
 .text-align2{
   position: absolute;
-  z-index: 20; /* 🔥 cao hơn tất cả */
+  z-index: 90; /* 🔥 cao hơn tất cả */
   pointer-events: auto;
 }
 .circle img{
@@ -361,6 +361,10 @@ a{color:#fff3b0;text-decoration:none}a:hover{color:#fff}
 .circle{
   pointer-events: auto;
   z-index: 50; /* vừa đủ thôi */
+}
+.circle{
+  width: 500px;
+  height: 500px;
 }
 </style>
 </head>
@@ -513,8 +517,7 @@ function toggleMenu(){
 ];
 </script>
   <script>
-  document.querySelector(".circle").addEventListener("click", () => {
-
+function triggerEffect(){
   const circle = document.querySelector(".circle");
 
   // ❄️ dừng quay
@@ -529,56 +532,57 @@ function toggleMenu(){
   // 🎵 làm chậm nhạc
   const music = document.getElementById("music");
   if(music){
-    music.playbackRate = 0.5; // chậm lại
+    music.playbackRate = 0.5;
   }
 
   // 🌑 overlay
   const overlay = document.createElement("div");
   overlay.classList.add("memory-overlay");
   document.body.appendChild(overlay);
-// 🌫 chữ hiện từng dòng
-const text = document.getElementById("memory-text");
-text.innerHTML = ""; // reset
-text.classList.add("show");
-text.style.opacity = "1"; // 🔥 BẮT BUỘC
-const delayPerLine = 2000; // mỗi dòng 2s
-const totalTime = memories.length * delayPerLine;
 
-memories.forEach((line, index) => {
-  setTimeout(() => {
-    const div = document.createElement("div");
-    div.textContent = line;
+  // 🌫 chữ hiện từng dòng
+  const text = document.getElementById("memory-text");
+  text.innerHTML = "";
+  text.classList.add("show");
+  text.style.opacity = "1";
 
-    div.style.opacity = "0";
-    div.style.transform = "translateY(20px)";
-    div.style.transition = "all 0.6s ease";
+  const delayPerLine = 2000;
+  const totalTime = memories.length * delayPerLine;
 
-    text.appendChild(div);
-    // hiện lên
+  memories.forEach((line, index) => {
     setTimeout(() => {
-      div.style.opacity = "1";
-      div.style.transform = "translateY(0)";
-    }, 50);
+      const div = document.createElement("div");
+      div.textContent = line;
 
-  }, index * delayPerLine);
-});
+      div.style.opacity = "0";
+      div.style.transform = "translateY(20px)";
+      div.style.transition = "all 0.6s ease";
 
+      text.appendChild(div);
 
-// ⏳ reset toàn bộ
-// ⏳ reset toàn bộ (đặt NGAY SAU forEach)
-setTimeout(()=>{
-  overlay.remove();
-  text.innerHTML = ""; // 🔥 xóa sạch chữ sau khi xong
-  document.body.classList.remove("slowmo");
-  document.body.classList.remove("shake");
+      setTimeout(() => {
+        div.style.opacity = "1";
+        div.style.transform = "translateY(0)";
+      }, 50);
 
-  if(music){
-    music.playbackRate = 1;
-  }
+    }, index * delayPerLine);
+  });
 
-  circle.style.animation = "spin 30s linear infinite";
-}, totalTime + 2500);
-  // 💥 nổ ảnh (giữ nguyên code cũ của bạn)
+  // ⏳ reset toàn bộ
+  setTimeout(()=>{
+    overlay.remove();
+    text.innerHTML = "";
+    document.body.classList.remove("slowmo");
+    document.body.classList.remove("shake");
+
+    if(music){
+      music.playbackRate = 1;
+    }
+
+    circle.style.animation = "spin 30s linear infinite";
+  }, totalTime + 2500);
+
+  // 💥 nổ ảnh
   document.querySelectorAll(".circle img").forEach(img=>{
     const rect = img.getBoundingClientRect();
 
@@ -603,8 +607,26 @@ setTimeout(()=>{
 
     setTimeout(()=>clone.remove(),1500);
   });
-});
+}
 
+
+// 👉 Bắt click theo vùng tròn
+document.addEventListener("click", (e) => {
+  const circle = document.querySelector(".circle");
+  const rect = circle.getBoundingClientRect();
+
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  const dx = e.clientX - centerX;
+  const dy = e.clientY - centerY;
+
+  const distance = Math.sqrt(dx*dx + dy*dy);
+
+  if(distance < 250){
+    triggerEffect();
+  }
+});
 </script>
   <div id="memory-text" class="memory-text"></div>
 </body>
